@@ -1,0 +1,290 @@
+
+/* 目錄 ---------------------------------------------------------------- */
+
+/* Number : 直接控制屬性數值，例如 max-width 或 font-size 等。 */
+/* Buttons : 按鈕。 */
+/* Heading : 區塊標題。 */
+/* Column : 柱狀容器。 */
+/* Category Box : 菜單形式的虛框線群組。 */
+/* Cards : 卡片。 */
+/* Divider : 分隔線。 */
+
+
+/* Number ---------------------------------------------------------------- */
+
+.max64 {
+	max-width: var(--number-64);
+}
+
+h2.inside {
+	font-size: var(--text-h2-inside);
+}
+
+h3.inside {
+	font-size: var(--text-h3-inside);
+}
+
+
+/* Buttons ---------------------------------------------------------------- */
+
+.button {
+	border: 1px solid var(--color-text);
+	border-radius: var(--number-rounded);
+	padding: var(--number-6) var(--number-16);
+	white-space: normal;
+}
+
+/* Size */
+
+.button.small {
+	padding: var(--number-4) var(--number-10);
+	font-size: var(--text-sm);
+}
+.button.large {
+	padding: var(--number-10) var(--number-20);
+	font-size: var(--text-lg);
+}
+.button.exlarge {
+	padding: var(--number-16) var(--number-32);
+	font-size: var(--text-xl);
+}
+
+/* Outline */
+
+.button.outline {
+	background-color: transparent;
+	color: var(--color-text);
+}
+.button.outline:hover {
+	background-color: var(--color-text);
+	color: var(--color-background1);
+}
+
+
+/* TAGs ---------------------------------------------------------------- */
+
+.tags {
+	margin-bottom: 0;
+}
+.tags li {
+	display: inline-block;
+	font-size: var(--text-sm);
+	padding: var(--number-2) var(--number-6);
+	border-radius: var(--number-rounded);
+	background-color: var(--color-background3);
+}
+
+
+/* Heading ---------------------------------------------------------------- */
+
+.heading {
+	display: flex;
+	/*justify-content: space-between; 讓左右兩端對齊 */
+	align-items: flex-end; /* 讓內容從底部對齊 */
+}
+.heading-title {
+	flex: 1; /* 讓文字區域佔據剩餘空間 */
+	padding-right: var(--number-32); /* 與右邊圖示保持距離 */
+}
+.heading .heading-title .title {
+	margin-bottom: var(--number-12);
+}
+.heading .heading-title .description {
+	line-height: 1.6;
+	margin-bottom: 0;
+}
+
+
+/* Column ---------------------------------------------------------------- */
+
+.column {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	align-self: stretch;
+	gap: var(--gap-content);
+}
+
+.column h3 {
+	font-size: var(--text-h3-inside);
+}
+
+.column h3 , .column p {
+	margin-bottom: 0;
+}
+
+/* Gap */
+
+.column.column-title { gap: var(--gap-title); } /* 12px */
+.column.column-list { gap: var(--gap-list); } /* 16px */
+.column.column-group { gap: var(--gap-group); } /* 24px */
+.column.column-object { gap: var(--gap-object); } /* 32px */
+.column.column-page-half { gap: var(--gap-page-half); } /* 48px */
+.column.column-page { gap: var(--gap-page); } /* 96px */
+
+
+/* Category Box ---------------------------------------------------------------- */
+
+.category-box {
+	display: flex;
+	flex-direction: column; /* 讓內容由上往下排 */
+	padding: var(--number-16);
+	border: 1px dashed var(--color-text);
+}
+.category-box p {
+	margin-bottom: var(--number-6);
+}
+.category-box .content {
+	margin-bottom: var(--number-24);
+}
+.category-box .actions {
+	margin-top: auto;
+}
+
+
+/* Cards ---------------------------------------------------------------- */
+
+.cards {
+	display: flex;
+}
+
+@media ( max-width: 576px ) {
+	.cards {
+		display: grid;
+	}
+}
+
+/* Left Image, Right Text */
+
+.cards.l-image-r-text {
+	border: 1px solid var(--color-text);
+	border-radius: var(--number-rounded);
+	padding: var(--number-16) var(--number-12);
+	gap: var(--number-24);
+}
+.cards.l-image-r-text .image {
+	flex-shrink: 0;
+	overflow: hidden;
+	max-width: var(--number-160);
+	border-radius: var(--number-rounded);
+}
+.cards.l-image-r-text .image img {
+	object-fit: cover;
+}
+@media ( max-width: 576px ) {
+	.cards.l-image-r-text .image {
+		max-width: fit-content;
+	}
+}
+
+/* Photo Text Media */
+
+.cards.photo-text-media {
+	flex-direction: column;
+	gap: var(--gap-list);
+}
+.cards.photo-text-media time {
+	font-weight: 100;
+}
+.cards.photo-text-media .image {
+	overflow: hidden;
+	border-radius: var(--number-rounded);
+}
+
+/* Image Around */
+
+.cards.image-around {
+	position: relative;
+	overflow: hidden;
+	border-radius: var(--number-rounded);
+}
+.cards.image-around .content {
+	position: absolute;
+	bottom: 10%;
+	left: 10%;
+	background-color: #FBF5E88F;
+	padding: var(--number-2) var(--number-6);
+	border-radius: var(--number-rounded);
+}
+.cards.image-around .content h3 {
+	margin-bottom: 0;
+}
+
+
+
+/* Divider ---------------------------------------------------------------- */
+
+hr.bold {
+	border-top: var(--number-10) solid;
+	opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

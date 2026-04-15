@@ -1,0 +1,119 @@
+/* Color ---------------------------------------------------------------- */
+
+:root {
+
+/* Project */
+
+--color-text: #3E2723;
+--color-primary: #A67B5B;
+--color-secondary: #6F4E37;
+--color-background1: #FDFBF6;
+--color-background2: #FBF5E8;
+--color-background3: #FFF2E3;
+--color-background4: #FFE4C6;
+--color-block: #FFDDA6;
+--color-link: #8A9A5B;
+
+/* Basic */
+
+--color-dark: #222222;
+--color-white: #FFFFFF;
+--color-blue: #1558D6;
+--color-warning: #EA1F30;
+
+/* Others */
+
+--color-tags-books: #FFA528;
+--color-tags-courses: #34C759;
+
+}
+
+/* Number ---------------------------------------------------------------- */
+
+:root {
+
+/* Regular */
+
+--number-2: 0.125rem;
+--number-4: 0.25rem;
+--number-6: 0.375rem;
+--number-8: 0.5rem;
+--number-10: 0.625rem;
+--number-12: 0.75rem;
+--number-16: 1rem;
+--number-20: 1.25rem;
+--number-24: 1.5rem;
+--number-32: 2rem;
+--number-48: 3rem;
+--number-64: 4rem;
+--number-96: 6rem;
+--number-160: 10rem;
+
+/* Gap */
+
+--gap-content: 0.375rem; /* 6px */
+--gap-title: 0.75rem; /* 12px */
+--gap-list: 1rem; /* 16px */
+--gap-group: 1.5rem; /* 24px */
+--gap-object: 2rem; /* 32px */
+--gap-page-half: 3rem; /* 48px */
+--gap-page: 6rem; /* 96px */
+
+/* Graph */
+
+--number-rounded: 0.375rem;
+--number-circle: 100rem;
+
+/* Font-Size */
+
+--text-h1: 3rem; /* 48px */
+--text-h2: 2.25rem; /* 36px */
+--text-h3: 1.5rem; /* 24px */
+--text-h4: 1.25rem; /* 20px */
+--text-h5: 1.125rem; /* 18px */
+--text-xl: 1.25rem; /* 20px */
+--text-lg: 1.125rem; /* 18px */
+--text-md: 1rem; /* 16px */
+--text-sm: 0.875rem; /* 14px */
+--text-xs: 0.75rem; /* 12px */
+--text-h2-inside: 1.5rem; /* 24px */
+--text-h3-inside: 1.25rem; /* 20px */
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
