@@ -5,3 +5,6 @@
 	Overwriting Default Theme Styles for Better Handling Updates
 -----------------------------------------------------------------*/
 
+ul, ol {
+	padding-left: var(--number-16);
+}

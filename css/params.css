@@ -17,14 +17,15 @@
 /* Basic */
 
 --color-dark: #222222;
+--color-gray: #D5D7DA;
 --color-white: #FFFFFF;
 --color-blue: #1558D6;
 --color-warning: #EA1F30;
 
 /* Others */
 
---color-tags-books: #FFA528;
---color-tags-courses: #34C759;
+--color-tags-orange: #FFA528;
+--color-tags-green: #34C759;
 
 }
 
@@ -78,6 +79,7 @@
 --text-xs: 0.75rem; /* 12px */
 --text-h2-inside: 1.5rem; /* 24px */
 --text-h3-inside: 1.25rem; /* 20px */
+--text-h4-inside: 1rem; /* 16px */
 
 }
 

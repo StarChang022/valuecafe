@@ -75,46 +75,7 @@
 }
 
 
-/* Index Hero ---------------------------------------------------------------- */
 
-#index-hero {
-	background-image: url('../images/index/banner.webp'); /* 設定背景圖片路徑 */
-	background-size: cover; /* 讓圖片填滿整個區塊，不留白也不變形 */
-	background-position: center center; /* 讓圖片中心點對齊 */
-	background-repeat: no-repeat; /* 防止圖片重複 */
-	padding: 100px 0; /* 設定上下間距，讓圖片有高度撐開（根據你的內容調整） */
-}
-
-#index-hero .frame {
-	background-color: #3E2723D1;
-	border-radius: var(--number-rounded);
-	padding: var(--number-8) var(--number-16);
-}
-
-#index-hero h1, #index-hero p {
-	color: var(--color-background1);
-	margin-bottom: 0;
-}
-
-@media (min-width: 992px) {
-	#index-hero {
-		min-height: 40rem;
-	}
-	#index-hero .container {
-		max-width: 37.5rem;
-	}
-}
-
-
-/* Index Legendary ---------------------------------------------------------------- */
-
-#legendary {
-	background-image: url('../images/index/legendary-wall.webp');
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center top;
-	width: 100%;
-}
 
 
 
