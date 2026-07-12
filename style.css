@@ -1,4 +1,4 @@
-@charset "UTF-8";
+Ｐ@charset "UTF-8";
 /*-----------------------------------------------------------------------------------
 
     Theme Name: Canvas
@@ -87,7 +87,7 @@
   --bs-font-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --bs-gradient: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
   --bs-body-font-family: var(--bs-font-sans-serif);
-  --bs-body-font-size: 1rem;
+  --bs-body-font-size: 1.125rem;
   --bs-body-font-weight: 400;
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
@@ -222,7 +222,7 @@ hr {
   margin: 1rem 0;
   color: inherit;
   border: 0;
-  border-top: var(--bs-border-width) solid;
+  border-top: 1px solid;
   opacity: 0.25;
 }
 
@@ -769,6 +769,9 @@ progress {
 }
 @media (min-width: 992px) {
   .container-lg, .container-md, .container-sm, .container {
+    max-width: 960px;
+  }
+  .not-full-page section .container {
     max-width: 960px;
   }
 }
@@ -13483,12 +13486,13 @@ textarea.form-control-lg {
   --cnvs-color-discord-rgb:	114, 137, 218;
   --cnvs-color-twitch:	#6441a5;
   --cnvs-color-twitch-rgb:	100, 65, 165;
-  --cnvs-font-size-body:	var(--bs-body-font-size);
+  /*--cnvs-font-size-body:	var(--bs-body-font-size);*/
   /*--cnvs-font-size-h1:	2.25rem;*/
   /*--cnvs-font-size-h2:	1.875rem;*/
   /*--cnvs-font-size-h3:	1.625rem;*/
   /*--cnvs-font-size-h4:	1.375rem;*/
   /*--cnvs-font-size-h5:	1.125rem;*/
+  --cnvs-font-size-body:  1.125rem;
   --cnvs-font-size-h1:  var(--text-h1);
   --cnvs-font-size-h2:  var(--text-h2);
   --cnvs-font-size-h3:  var(--text-h3);
@@ -13527,7 +13531,8 @@ textarea.form-control-lg {
   /*--cnvs-body-bg:	var(--bs-body-bg);*/
   --cnvs-body-bg: var(--color-background1);
   --cnvs-body-bg-boxed:	var(--cnvs-body-bg);
-  --cnvs-link-color:	var(--cnvs-themecolor);
+  /*--cnvs-link-color:	var(--cnvs-themecolor);*/
+  --cnvs-link-color:  var(--color-link);
   --cnvs-link-hover-color:	var(--cnvs---cnvs-heading-color);
   --cnvs-contrast-rgb:	0, 0, 0;
   --cnvs-invert-contrast-rgb:	255, 255, 255;

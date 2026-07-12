@@ -2,31 +2,71 @@
 /* 目錄 ---------------------------------------------------------------- */
 
 /* Number : 直接控制屬性數值，例如 max-width 或 font-size 等。 */
+/* Background Color : 背景顏色。 */
+/* Content : 內容排版調整。 */
 /* Buttons : 按鈕。 */
-/* Heading : 區塊標題。 */
+/* TAGs : 標籤。 */
 /* Column : 柱狀容器。 */
-/* Category Box : 菜單形式的虛框線群組。 */
+/* Heading : 區塊標題。 */
+/* Group Box : 菜單形式的框線群組。 */
 /* Cards : 卡片。 */
+/* Bookmarks : 書籤型卡片。 */
 /* Divider : 分隔線。 */
+/* Blocks : 內容區塊。 */
+
 
 
 /* Number ---------------------------------------------------------------- */
 
-.max64 {
-	max-width: var(--number-64);
+.max64 { max-width: 4rem; }
+.max256 { max-width: 16rem; }
+.max640 { max-width: 40rem; }
+h2.inside { font-size: var(--text-h2-inside); }
+h3.inside { font-size: var(--text-h3-inside); }
+h4.inside { font-size: var(--text-h4-inside); }
+
+
+
+/* Background Color ---------------------------------------------------------------- */
+
+.background1 { background-color: var(--color-background1); }
+.background2 { background-color: var(--color-background2); }
+.background3 { background-color: var(--color-background3); }
+.background4 { background-color: var(--color-background4); }
+
+
+
+/* Content ---------------------------------------------------------------- */
+
+/* Clamp 限制行數 */
+
+.clamp {
+	display: -webkit-box;
+	overflow: hidden;
+	-webkit-box-orient: vertical;
+}
+.clamp.line1 { -webkit-line-clamp: 1; }
+.clamp.line2 { -webkit-line-clamp: 2; }
+.clamp.line3 { -webkit-line-clamp: 3; }
+
+/* Spread 左右撐滿內容 */
+
+.spread {
+	display: flex;
+}
+.spread .title {
+	flex: 1 0 0;
+}
+.spread .content {
+	display: flex;
+	gap: 1rem;
+}
+.spread .content p {
+	display: inline-block;
+	margin-bottom: 0;
 }
 
-h2.inside {
-	font-size: var(--text-h2-inside);
-}
 
-h3.inside {
-	font-size: var(--text-h3-inside);
-}
-
-h4.inside {
-	font-size: var(--text-h4-inside);
-}
 
 /* Buttons ---------------------------------------------------------------- */
 
@@ -64,32 +104,6 @@ h4.inside {
 }
 
 
-/* Column ---------------------------------------------------------------- */
-
-.column {
-	display: flex;
-	flex-direction: column;
-	align-items: stretch;
-	align-self: stretch;
-	gap: var(--gap-content);
-}
-}
-.column h3 {
-	font-size: var(--text-h3-inside);
-}
-.column h2, .column h3, .column h4, .column p {
-	margin-bottom: 0;
-}
-
-/* Gap */
-
-.column.column-title { gap: var(--gap-title); } /* 12px */
-.column.column-list { gap: var(--gap-list); } /* 16px */
-.column.column-group { gap: var(--gap-group); } /* 24px */
-.column.column-object { gap: var(--gap-object); } /* 32px */
-.column.column-page-half { gap: var(--gap-page-half); } /* 48px */
-.column.column-page { gap: var(--gap-page); } /* 96px */
-
 
 /* TAGs ---------------------------------------------------------------- */
 
@@ -105,26 +119,46 @@ h4.inside {
 	margin-bottom: var(--number-6);
 }
 
-/* Yolk */
-
-.tags .yolk {
-	background-color: var(--color-background3);
-	color: var(--color-primary);
+.tags h1, .tags h2, .tags h3, .tags h4, .tags p {
+	margin-bottom: 0;
 }
 
-/* Green */
+.tags .yolk { background-color: var(--color-background3); color: var(--color-primary); }
+.tags .green { background-color: var(--color-tags-green); color: var(--color-white); }
+.tags .orange { background-color: var(--color-tags-orange); color: var(--color-white); }
+.tags .translucent { background-color: #FBF5E88F; }
 
-.tags .green {
-	background-color: var(--color-tags-green);
-	color: var(--color-white);
+
+
+/* Column ---------------------------------------------------------------- */
+
+.column {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	align-self: stretch;
+	gap: var(--gap-content);
+}
+.column h3 {
+	font-size: var(--text-h3-inside);
+}
+.column h1, .column h2, .column h3, .column h4, .column p {
+	margin-bottom: 0;
 }
 
-/* Orange */
-
-.tags .orange {
-	background-color: var(--color-tags-orange);
-	color: var(--color-white);
+.column h3, .column h4, {
+	margin-top: var(--gap-list);
 }
+
+/* Gap */
+
+.column.column-title { gap: var(--gap-title); } /* 12px */
+.column.column-list { gap: var(--gap-list); } /* 16px */
+.column.column-group { gap: var(--gap-group); } /* 24px */
+.column.column-object { gap: var(--gap-object); } /* 32px */
+.column.column-page-half { gap: var(--gap-page-half); } /* 48px */
+.column.column-page { gap: var(--gap-page); } /* 96px */
+
 
 
 /* Heading ---------------------------------------------------------------- */
@@ -133,50 +167,72 @@ h4.inside {
 	display: flex;
 	align-items: flex-end; /* 讓內容從底部對齊 */
 }
-.heading-title {
-	flex: 1; /* 讓文字區域佔據剩餘空間 */
+.heading .heading-title {
+	flex: 1; /* 讓文字區域佔據圖片的剩餘空間 */
 	padding-right: var(--number-32); /* 與右邊圖示保持距離 */
+	display: flex;
+	flex-direction: column;
+	gap: var(--gap-title);
 }
 .heading .heading-title .title {
-	margin-bottom: var(--number-12);
+	margin-bottom: 0;
+	line-height: 120%;
 }
 .heading .heading-title .description {
 	line-height: 1.6;
+	margin-bottom: 0;
+}
+.heading .heading-title .meta {
+	display: flex;
+	gap: var(--gap-title);
+}
+.heading h1, .heading h2, .heading h3, .heading h4, .heading p {
 	margin-bottom: 0;
 }
 
 
 /* Group Box ---------------------------------------------------------------- */
 
-/* Solid */
-
 .group-box {
 	display: flex;
 	flex-direction: column; /* 讓內容由上往下排 */
 	padding: var(--number-16);
-	border: 1px solid var(--color-text);
-}
-.group-box p {
-	margin-bottom: var(--number-6);
+	gap: var(--number-16);
 }
 .group-box .content {
-	margin-bottom: var(--number-24);
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	align-self: stretch;
+	gap: var(--gap-content);
 }
 .group-box .actions {
 	margin-top: auto;
 }
 
+/* Solid */
+
+.group-box.solid {
+	border: 1px solid var(--color-text);
+}
+
 /* Dashed */
 
 .group-box.dashed {
-	border-style: dashed;
+	border: 1px dashed var(--color-text);
 }
+
+/* Background Color */
+
+.group-box.background3 { background-color: var(--color-background3); }
+
 
 
 /* Cards ---------------------------------------------------------------- */
 
 .cards {
 	display: flex;
+	color: var(--cnvs-themecolor);
 }
 
 @media ( max-width: 576px ) {
@@ -187,6 +243,28 @@ h4.inside {
 
 .cards h2, .cards h3, .cards h4, .cards h5 {
 	margin-bottom: 0;
+}
+
+/* Background Horizontal */
+
+.cards.background-horizontal {
+	border-radius: var(--number-rounded);
+	padding: var(--number-16) var(--number-12);
+	gap: var(--number-24);
+}
+.cards.background-horizontal .image {
+	flex-shrink: 0;
+	overflow: hidden;
+	max-width: var(--number-160);
+	border-radius: var(--number-rounded);
+}
+.cards.background-horizontal .image img {
+	object-fit: cover;
+}
+@media ( max-width: 576px ) {
+	.cards.background-horizontal .image {
+		max-width: fit-content;
+	}
 }
 
 /* Border Horizontal */
@@ -218,11 +296,8 @@ h4.inside {
 	border: 1px solid var(--color-text);
 	border-radius: var(--number-rounded);
 	padding: var(--number-16) var(--number-12);
-	gap: var(--number-title);
+	gap: var(--gap-title);
 	flex-direction: column;
-}
-.cards.border-vertical .item .title {
-	font-weight: bold;
 }
 
 /* Photo Text Media */
@@ -230,6 +305,16 @@ h4.inside {
 .cards.photo-text-media {
 	flex-direction: column;
 	gap: var(--gap-list);
+}
+.cards.photo-text-media h3 {
+	margin-top: 0;
+	font-size: var(--text-md);
+	font-weight: 300;
+	display: -webkit-box;
+	-webkit-line-clamp: 3;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	word-break: break-all;
 }
 .cards.photo-text-media time {
 	font-weight: 100;
@@ -248,12 +333,12 @@ h4.inside {
 }
 .cards.image-around .content {
 	position: absolute;
-	bottom: 10%;
-	left: 10%;
-	background-color: #FBF5E88F;
-	padding: var(--number-2) var(--number-6);
-	border-radius: var(--number-rounded);
+	max-width: 80%;
 }
+
+.cards.image-around .content.top-left { top: 10% ; left: 10%; }
+.cards.image-around .content.bottom-left { bottom: 10% ; left: 10%; }
+
 
 
 /* Bookmarks ---------------------------------------------------------------- */
@@ -266,7 +351,8 @@ h4.inside {
 	border-radius: var(--number-rounded);
 }
 .bookmarks h3 {
-	margin-bottom: 0;
+	font-size: var(--number-16);
+	margin-top: var(--gap-content);
 }
 .bookmarks .image {
 	width: 3rem;
@@ -280,6 +366,10 @@ h4.inside {
 	object-fit: cover;
 	object-position: center;
 }
+.bookmarks h3, .bookmarks li {
+	margin-bottom: 0;
+}
+
 
 /* Rounded */
 
@@ -290,9 +380,8 @@ h4.inside {
 	align-items: center;
 	gap: var(--gap-title);
 }
-.bookmarks.bookmarks-rounded h3 {
-	font-size: var(--number-16);
-	font-weight: 400;
+.bookmarks.bookmarks-rounded p {
+	line-height: 140%;
 }
 .bookmarks.bookmarks-rounded .number {
 	font-size: var(--number-24);
@@ -316,6 +405,7 @@ h4.inside {
 }
 
 
+
 /* Divider ---------------------------------------------------------------- */
 
 hr.bold {
@@ -325,7 +415,21 @@ hr.bold {
 
 
 
+/* Blocks ---------------------------------------------------------------- */
 
+.blocks {
+	padding: var(--number-24) var(--number-32);
+}
+.blocks .content {
+	display: flex;
+	flex-direction: column;
+	gap: var(--number-24);
+}
+.blocks .content h2,
+.blocks .content h3,
+.blocks .content p {
+	margin-bottom: 0;
+}
 
 
 

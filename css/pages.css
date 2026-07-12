@@ -2,7 +2,7 @@
 
 /* Hero */
 
-#index-hero {
+.index #hero {
 	background-image: url('../images/index/hero.webp'); /* 設定背景圖片路徑 */
 	background-size: cover; /* 讓圖片填滿整個區塊，不留白也不變形 */
 	background-position: center center; /* 讓圖片中心點對齊 */
@@ -10,42 +10,42 @@
 	padding: 100px 0; /* 設定上下間距，讓圖片有高度撐開（根據你的內容調整） */
 }
 
-#index-hero .frame {
+.index #hero .frame {
 	background-color: #3E2723D1;
 	border-radius: var(--number-rounded);
 	padding: var(--number-8) var(--number-16);
 }
 
-#index-hero h1, #index-hero p {
+.index #hero h1, .index #hero p {
 	color: var(--color-background1);
 	margin-bottom: 0;
 }
 
 @media (min-width: 992px) {
-	#index-hero {
+	.index #hero {
 		min-height: 40rem;
 	}
-	#index-hero .container {
+	.index #hero .container {
 		max-width: 37.5rem;
 	}
 }
 
 /* News & Views */
 
-.index-news {
+.index #news h2 {
 	font-size: var(--number-96);
 	line-height: 1.2;
 }
 
 @media ( max-width: 576px ) {
-	.index-news {
+	.index #news h2 {
 		font-size: var(--number-48);
 	}
 }
 
 /* Legendary */
 
-#legendary {
+.index #legendary {
 	background-image: url('../images/index/legendary-wall.webp');
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -56,7 +56,7 @@
 
 /* Worldview ---------------------------------------------------------------- */
 
-#worldview-hero {
+.worldview #hero {
 	text-align: center;
 	background-image: url('../images/to-beginners/worldview-hero.webp'); /* 設定背景圖片路徑 */
 	background-size: cover; /* 讓圖片填滿整個區塊，不留白也不變形 */
@@ -65,15 +65,19 @@
 	padding: 100px 0; /* 設定上下間距，讓圖片有高度撐開（根據你的內容調整） */
 }
 @media (min-width: 1440px) {
-	#worldview-hero .container {
+	.worldview #hero .container {
 		max-width: 37.5rem;
 	}
 }
 
 
+/* Legendary ---------------------------------------------------------------- */
 
-
-
+@media (max-width: 991px) {
+	.legendary #hero img {
+		max-width: 12.5rem;
+	}
+}
 
 
 
