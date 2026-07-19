@@ -1,0 +1,12 @@
+{
+  "serverInfo": {
+    "name": "valuecafe-mcp",
+    "version": "1.0.0"
+  },
+  "endpoint": "https://valuecafe.cc/mcp",
+  "capabilities": {
+    "tools": false,
+    "resources": true,
+    "prompts": false
+  }
+}

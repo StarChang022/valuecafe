@@ -1,0 +1,6 @@
+{
+  "resource": "https://valuecafe.cc",
+  "authorization_servers": ["https://valuecafe.cc"],
+  "scopes_supported": ["read"],
+  "bearer_methods_supported": ["header"]
+}
