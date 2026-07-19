@@ -1,0 +1,72 @@
+# Head Editor
+
+**id**: cigar-butt-investing
+**title**: Cigar Butt Investing : This is the strategy Warren Buffett used to build his early wealth. Let's talk about what makes it worth learning.
+**description**: Take a deep dive into Benjamin Graham’s famous 'cigar butt' investing strategy. We’ll look at how Warren Buffett used this approach to build his foundation and how he eventually evolved his strategy over time. This post goes beyond just the numbers to explain the 'margin of safety,' which is the single most important rule in all of value investing.
+**keywords**: Cigar butt investing, value investing, margin of safety, net-net valuation, Benjamin Graham, Warren Buffett, Graham’s investment philosophy.
+**list-summary**: This was Buffett's original strategy for getting rich. It was his 'early-days' playbook.
+**name**: Cigar Butt Investing
+
+---
+
+# Hero Editor
+
+<div class="column column-group">
+	<div class="heading">
+		<div class="heading-title">
+			<h1>Cigar Butt Investing : This is the strategy Warren Buffett used to build his early wealth. Let's talk about what makes it worth learning.</h1>
+			<p class="description">The "Cigar Butt" theory is legendary in value investing circles. It is basically 101 stuff from the founding father, Benjamin Graham.</p>
+			<p class="description">Here is the gist. If you see a cigar butt on the ground, you can pick it up and get one last good puff out of it for free. In the stock market, this means buying a company at a rock-bottom price. Even if the business itself is pretty lousy, as long as you buy it cheap enough, you can still make a solid profit.</p>
+			<p class="description">This approach used to be incredibly effective. It is actually how Warren Buffett made his first fortune back in the day. But nowadays, it really doesn't work that well anymore.</p>
+		</div>
+	</div>
+	<img src="../images/intrinsic-value/cigar-butt-investing/cover.webp" alt="Cigar Butt Investing">
+</div>
+
+---
+
+# Content Editor
+
+<div class="column column-group">
+	<div class="column column-content">
+		<p>Most people see investing as this big, glamorous party where everyone is chasing the hottest trends and the biggest stars.</p>
+		<p>But Benjamin Graham, the pioneer of the "Cigar Butt" theory, figured out that the real treasure is hiding in the dark, ignored corners after the party is over. These are the opportunities Mr. Market tossed aside just because he was getting a little emotional.</p>
+		<p>Graham wasn't just the guy who came up with this theory; he was also Warren Buffett's mentor. He used to find these totally unremarkable, even boring companies. But when he added up all their assets and subtracted the debts, he’d realize that the company's liquidation value was way higher than its stock price. It’s like spotting a nasty, discarded cigar butt on the sidewalk. It looks gross and nobody wants it, but if you pick it up, you realize there’s still one good puff left in it for free. It’s not going to make you filthy rich, but it is free profit. That is the core concept of the "Cigar Butt" theory.</p>
+		<p>This strategy might not really work in today's financial world. Even Warren Buffett stopped using it (thanks to Charlie Munger's influence). Still, I recommend trying to understand it. It will give you a much deeper grasp of what value investing is really about.</p>
+	</div>
+	<div class="column column-content">
+		<h2>The core of the cigar butt theory</h2>
+		<p>The Cigar Butt strategy is actually a very strict and conservative way to invest. I mentioned earlier that Benjamin Graham was the pioneer here. I wouldn't call him the inventor—he probably tweaked some existing ideas—but he is definitely the guy who put it on the map.</p>
+		<p>The logic behind it is super simple. You look for a company where, even if it went belly-up tomorrow and sold off every single asset to pay its debts, the cash left over would still be more than what you paid for the stock today. That gap in price is what Graham called the "Margin of Safety."</p>
+		<p>Think of it this way. If you see a bridge with a 10-ton weight limit, would you drive a 9.9-ton truck across it? Probably not. You’d feel a lot better driving a 5-ton truck across, right? That 5-ton difference is your margin of safety. It gives you a wide enough buffer so that even if your math is slightly off, or if bad weather messes with the bridge, you’re still safe.</p>
+		<p>In investing, that buffer is where your profit comes from. It is also the line of defense that keeps you from losing your shirt.</p>
+	</div>
+	<div class="column column-content">
+		<h2>How to calculate value using the cigar butt strategy</h2>
+		<div class="group-box solid">
+			<div class="content">
+				<p>NCAV = Current Assets - Total Liabilities</p>
+			</div>
+		</div>
+		<p>First off, let me say there isn't exactly a standard formula for the Cigar Butt method. You could totally just use the "Book Value Per Share" right out of the financial report if you wanted. But there is a more conservative metric you can use called "Net Current Asset Value," or NCAV.</p>
+		<p>You might be asking, "Why only count current assets? Aren't fixed assets like factories, land, and machinery worth real money?"</p>
+		<p>Benjamin Graham figured that if a company is on the brink of collapse, those factories and machines are likely worthless or really hard to sell off quickly. To make the margin of safety actually mean something, he treated the value of fixed assets as zero. He only counted the stuff that could turn into cash in the short term and then subtracted all the liabilities.</p>
+		<p>As for the ratio of NCAV to the current stock price? Again, there's no standard answer. You could go with Graham’s 3x rule (like if the stock is $10 but the NCAV is $30), or you can just come up with your own multiplier.</p>
+	</div>
+	<div class="column column-content">
+		<h2>Why isn't it a good idea to pick up cigar butts anymore?</h2>
+		<p>The Cigar Butt method definitely made Warren Buffett a ton of cash early in his career. It was simple and it worked. But as time went on, a problem with this strategy became unavoidable: "A cigar butt you pick up off the street is still just a cigar butt."</p>
+		<p>These are usually crummy companies with a bleak future. Sure, they are so cheap it’s almost impossible to lose money, but you can't really count on them for big long-term returns. That means you have to act like a scavenger, constantly bending over to look for the next discarded butt. Plus, you miss out on the most beautiful thing in investing: "compound interest." You can't hold onto a terrible company for the long haul and expect to enjoy the compounding growth that comes with a good business.</p>
+		<h3 class="inside">Switching from cheap, average companies to buying great companies</h3>
+		<p>"It's far better to buy a wonderful company at a fair price than a fair company at a wonderful price." That is Charlie Munger’s famous line.</p>
+		<p>Investing shouldn't just be about digging through the bargain bin for the cheapest stuff that's about to expire. Instead, you should be looking for great businesses with high quality, wide moats, and the ability to keep creating value. When their price becomes reasonable, you buy them and hold on tight.</p>
+		<p>The margin of safety is still the cornerstone of making investment decisions. It’s just that the target has changed. We don't apply it to dying, trashy companies anymore. We apply it to great enterprises with a bright future.</p>
+		<p>Picking up cigar butts can teach you the arithmetic of investing, but to really build massive wealth, you have to learn how to appreciate business quality.</p>
+	</div>
+	<div class="column column-content">
+		<h2>Should you still use the cigar butt method?</h2>
+		<p>Should you keep scouring the corners of the market for those discarded cigar butts?</p>
+		<p>In today’s world where information moves instantly, investment opportunities that actually meet Graham's strict standards are getting rarer and rarer. Anyone can pull up public data and find companies with a P/B ratio under 1 or an NCAV greater than zero. Plus, the Cigar Butt strategy is known by pretty much everyone now. It’s not exactly a secret.</p>
+		<p>You can still learn the concept of "Margin of Safety" from it, though. The idea of buying assets for way less than their intrinsic value is solid. Even though we know we should be buying great companies now, the margin of safety is still a condition you can't just throw away.</p>
+	</div>
+</div>
