@@ -1,0 +1,22 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://valuecafe.cc/api/",
+      "profile": "https://www.rfc-editor.org/info/rfc9727",
+      "author": "ValueCafe",
+      "item": [
+        {
+          "href": "https://valuecafe.cc/.well-known/openapi.json",
+          "rel": "service-desc",
+          "type": "application/json",
+          "title": "ValueCafe Dummy API Specification"
+        },
+        {
+          "href": "https://valuecafe.cc/llms.txt",
+          "rel": "service-doc",
+          "title": "ValueCafe LLM Documentation Index"
+        }
+      ]
+    }
+  ]
+}
