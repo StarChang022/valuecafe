@@ -1,2 +1,2 @@
 /
-  Link: </llms.txt>; rel="service-doc"
+  Link: </llms.txt>; rel="service-doc", </.well-known/api-catalog>; rel="api-catalog", </.well-known/openapi.json>; rel="describedby"
