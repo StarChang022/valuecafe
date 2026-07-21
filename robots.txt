@@ -33,3 +33,5 @@ Allow: /
 # Standard crawlers
 User-agent: *
 Allow: /
+
+Sitemap: https://valuecafe.cc/sitemap.xml
