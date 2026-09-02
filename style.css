@@ -17325,7 +17325,7 @@ img.lazy:not([src]) {
   --cnvs-primary-menu-font:	var(--cnvs-primary-font);
   --cnvs-primary-menu-font-weight:	700;
   --cnvs-primary-menu-font-size:	0.8125rem;
-  --cnvs-primary-menu-tt:	uppercase;
+  --cnvs-primary-menu-tt:	none;
   --cnvs-primary-menu-ls:	1px;
   --cnvs-primary-menu-icon-size:	1rem;
   --cnvs-primary-menu-icon-gap:	0.625rem;
@@ -17334,14 +17334,14 @@ img.lazy:not([src]) {
   --cnvs-primary-menu-submenu-padding-x: 15px;
   --cnvs-primary-menu-submenu-padding-y: 10px;
   --cnvs-primary-menu-submenu-top-border: 2px solid var(--cnvs-themecolor);
-  --cnvs-primary-menu-submenu-width:	240px;
+  --cnvs-primary-menu-submenu-width: 300px;
   --cnvs-primary-menu-submenu-display-speed:	0.3s;
   --cnvs-primary-menu-submenu-display-offset:	0.5rem;
   --cnvs-primary-menu-submenu-font:	var(--cnvs-body-font);
   --cnvs-primary-menu-submenu-font-size:	0.75rem;
   --cnvs-primary-menu-submenu-font-weight:	600;
   --cnvs-primary-menu-submenu-hover-font-weight: 700;
-  --cnvs-primary-menu-submenu-tt:	uppercase;
+  --cnvs-primary-menu-submenu-tt:	none;
   --cnvs-primary-menu-submenu-color:	var(--cnvs-contrast-900);
   --cnvs-primary-menu-submenu-spacing:	0;
   --cnvs-primary-menu-submenu-border:	1px solid rgba(var(--cnvs-contrast-rgb), 0.1);
@@ -18277,7 +18277,7 @@ body:not(.is-expanded-menu) .mobile-menu-overlay .menu-container {
   margin-top: 1.5rem;
 }
 .is-expanded-menu .mega-menu-style-2 .mega-menu-title > .menu-link {
-  --cnvs-primary-menu-submenu-tt: uppercase;
+  --cnvs-primary-menu-submenu-tt: none;
   --cnvs-primary-menu-submenu-font-weight: 700;
   --cnvs-primary-menu-submenu-hover-font-weight: 700;
   --cnvs-primary-menu-font: var(--cnvs-primary-font);

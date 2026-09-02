@@ -5,6 +5,27 @@
 	Overwriting Default Theme Styles for Better Handling Updates
 -----------------------------------------------------------------*/
 
+:root {
+	--cnvs-primary-menu-tt: none;
+	--cnvs-primary-menu-submenu-tt: none;
+}
+
+.menu-link {
+	text-transform: none;
+}
+
 ul, ol {
 	padding-left: var(--number-32);
 }
+
+#footer .footer-widgets-wrap .widget ul,
+#footer .widget ul {
+	list-style: none;
+	padding-left: 0;
+}
+
+#footer .footer-widgets-wrap .widget ul li,
+#footer .widget ul li {
+	padding-left: 0;
+}
+

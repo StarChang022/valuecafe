@@ -50,6 +50,23 @@
 	}
 }
 
+.news #hero h1 {
+	font-size: var(--number-96);
+	line-height: 1.1;
+}
+
+@media (max-width: 991px) {
+	.news #hero h1 {
+		font-size: var(--number-64);
+	}
+}
+
+@media (max-width: 576px) {
+	.news #hero h1 {
+		font-size: var(--number-48);
+	}
+}
+
 /* Legendary */
 
 .index #legendary {

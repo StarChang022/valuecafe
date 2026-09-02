@@ -1,0 +1,10 @@
+{
+  "html.format.wrapLineLength": 0,
+  "html.format.unformatted": "p,h1,h2,h3,h4,h5,h6,li,span,a,td,th,dt,dd",
+  "prettier.printWidth": 9999,
+  "prettier.proseWrap": "never",
+  "prettier.htmlWhitespaceSensitivity": "ignore",
+  "[html]": {
+    "editor.wordWrap": "on"
+  }
+}
