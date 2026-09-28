@@ -3,7 +3,7 @@
 /* Hero */
 
 .index #hero {
-	background-image: url('../images/index/hero.webp');
+	background-image: url('../images/index/hero-mobile.webp');
 	/* 設定背景圖片路徑 */
 	background-size: cover;
 	/* 讓圖片填滿整個區塊，不留白也不變形 */
@@ -13,6 +13,12 @@
 	/* 防止圖片重複 */
 	padding: 100px 0;
 	/* 設定上下間距，讓圖片有高度撐開（根據你的內容調整） */
+}
+
+@media (min-width: 768px) {
+	.index #hero {
+		background-image: url('../images/index/hero.webp');
+	}
 }
 
 .index #hero .frame {

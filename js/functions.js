@@ -267,17 +267,17 @@ if( typeof jQuery !== 'undefined' ) {
 				}, {passive: true});
 			},
 
-			viewport: function() {
+			viewport: function( force = false ) {
+				if( !force && vars.viewport && vars.viewport.width > 0 ) {
+					return vars.viewport;
+				}
+
 				var viewport = {
-					width: window.innerWidth || vars.elRoot.clientWidth,
-					height: window.innerHeight || vars.elRoot.clientHeight
+					width: window.visualViewport?.width || window.innerWidth || vars.elRoot.clientWidth,
+					height: window.visualViewport?.height || window.innerHeight || vars.elRoot.clientHeight
 				};
 
 				vars.viewport = viewport;
-
-				document.documentElement.style.setProperty('--cnvs-viewport-width', viewport.width);
-				document.documentElement.style.setProperty('--cnvs-viewport-height', viewport.height);
-				document.documentElement.style.setProperty('--cnvs-body-height', vars.elBody.clientHeight);
 
 				return viewport;
 			},
@@ -1222,7 +1222,7 @@ if( typeof jQuery !== 'undefined' ) {
 	var DocumentOnResize = function() {
 		return {
 			init: function() {
-				Core.viewport();
+				Core.viewport(true);
 				Core.breakpoints();
 				Base.menuBreakpoint();
 
@@ -1268,9 +1268,17 @@ if( typeof jQuery !== 'undefined' ) {
 		};
 	}();
 
-	document.addEventListener( 'DOMContentLoaded', function() {
-		DocumentOnReady.init();
-	});
+	var initReady = function() {
+		window.requestAnimationFrame( function() {
+			DocumentOnReady.init();
+		});
+	};
+
+	if( document.readyState === 'loading' ) {
+		document.addEventListener( 'DOMContentLoaded', initReady );
+	} else {
+		initReady();
+	}
 
 	window.addEventListener('load', function() {
 		DocumentOnLoad.init();

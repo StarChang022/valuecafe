@@ -267,17 +267,17 @@ if( typeof jQuery !== 'undefined' ) {
 				}, {passive: true});
 			},
 
-			viewport: function() {
+			viewport: function( force = false ) {
+				if( !force && vars.viewport && vars.viewport.width > 0 ) {
+					return vars.viewport;
+				}
+
 				var viewport = {
-					width: window.innerWidth || vars.elRoot.clientWidth,
-					height: window.innerHeight || vars.elRoot.clientHeight
+					width: window.visualViewport?.width || window.innerWidth || vars.elRoot.clientWidth,
+					height: window.visualViewport?.height || window.innerHeight || vars.elRoot.clientHeight
 				};
 
 				vars.viewport = viewport;
-
-				document.documentElement.style.setProperty('--cnvs-viewport-width', viewport.width);
-				document.documentElement.style.setProperty('--cnvs-viewport-height', viewport.height);
-				document.documentElement.style.setProperty('--cnvs-body-height', vars.elBody.clientHeight);
 
 				return viewport;
 			},
@@ -1115,7 +1115,7 @@ if( typeof jQuery !== 'undefined' ) {
 	var DocumentOnResize = function() {
 		return {
 			init: function() {
-				Core.viewport();
+				Core.viewport(true);
 				Core.breakpoints();
 				Base.menuBreakpoint();
 
@@ -1161,9 +1161,17 @@ if( typeof jQuery !== 'undefined' ) {
 		};
 	}();
 
-	document.addEventListener( 'DOMContentLoaded', function() {
-		DocumentOnReady.init();
-	});
+	var initReady = function() {
+		window.requestAnimationFrame( function() {
+			DocumentOnReady.init();
+		});
+	};
+
+	if( document.readyState === 'loading' ) {
+		document.addEventListener( 'DOMContentLoaded', initReady );
+	} else {
+		initReady();
+	}
 
 	window.addEventListener('load', function() {
 		DocumentOnLoad.init();
@@ -1325,10 +1333,12 @@ if( typeof jQuery !== 'undefined' ) {
 						return true;
 					}
 
-					__core.getVars.elFooter.style.marginTop = '';
+					if( __core.getVars.elFooter && __core.getVars.elFooter.style.marginTop ) {
+						__core.getVars.elFooter.style.marginTop = '';
+					}
 
 					var windowH = __core.viewport().height,
-						wrapperH = __core.getVars.elWrapper.offsetHeight;
+						wrapperH = __core.getVars.elWrapper?.offsetHeight || 0;
 
 					if( !__core.getVars.elBody.classList.contains('sticky-footer') && __core.getVars.elFooter !== 'undefined' && __core.getVars.elWrapper.contains( __core.getVars.elFooter ) ) {
 						if( windowH > wrapperH ) {
@@ -1358,15 +1368,14 @@ if( typeof jQuery !== 'undefined' ) {
 		Headers: function() {
 			var _offset = function() {
 				var elHeader = __core.getVars.elHeader;
+				if( !elHeader ) return;
 				var elHeaderInc = document.querySelector('.include-header');
 
 				__core.getVars.headerOffset = elHeader.offsetTop;
 				if( __core.getVars.elHeader?.classList.contains('floating-header') || elHeaderInc?.classList.contains('include-topbar') ) {
 					__core.getVars.headerOffset = __core.offset(elHeader).top;
 				}
-				__core.getVars.elHeaderWrap?.classList.add('position-absolute');
-				__core.getVars.headerWrapOffset = __core.getVars.headerOffset + __core.getVars.elHeaderWrap?.offsetTop;
-				__core.getVars.elHeaderWrap?.classList.remove('position-absolute');
+				__core.getVars.headerWrapOffset = __core.getVars.headerOffset + (__core.getVars.elHeaderWrap?.offsetTop || 0);
 
 				if( elHeader.hasAttribute('data-sticky-offset') ) {
 					var headerDefinedOffset = elHeader.getAttribute('data-sticky-offset');
@@ -1473,12 +1482,13 @@ if( typeof jQuery !== 'undefined' ) {
 
 			var _includeHeader = function() {
 				var elHeaderInc = document.querySelector('.include-header');
-				var elHeader = __core.getVars.elHeader;
-				__core.getVars.headerHeight = elHeader.offsetHeight;
-
 				if( !elHeaderInc ) {
 					return true;
 				}
+
+				var elHeader = __core.getVars.elHeader;
+				if( !elHeader ) return true;
+				__core.getVars.headerHeight = elHeader.offsetHeight;
 
 				elHeaderInc.style.marginTop = '';
 
@@ -5674,111 +5684,141 @@ if( typeof jQuery !== 'undefined' ) {
 
 						selector.each( function(){
 							var element = jQuery(this),
-								elItems = element.attr('data-items') || 4,
-								elItemsXs = element.attr('data-items-xs') || Number( elItems ),
-								elItemsSm = element.attr('data-items-sm') || Number( elItemsXs ),
-								elItemsMd = element.attr('data-items-md') || Number( elItemsSm ),
-								elItemsLg = element.attr('data-items-lg') || Number( elItemsMd ),
-								elItemsXl = element.attr('data-items-xl') || Number( elItemsLg ),
-								elItemsXxl = element.attr('data-items-xxl') || Number( elItemsXl ),
-								elLoop = element.attr('data-loop'),
-								elAutoPlay = element.attr('data-autoplay'),
-								elSpeed = element.attr('data-speed') || 250,
-								elAnimateIn = element.attr('data-animate-in'),
-								elAnimateOut = element.attr('data-animate-out'),
-								elAutoWidth = element.attr('data-auto-width'),
-								elNav = element.attr('data-nav'),
-								elNavPrev = element.attr('data-nav-prev') || '<i class="uil uil-angle-left-b"></i>',
-								elNavNext = element.attr('data-nav-next') || '<i class="uil uil-angle-right-b"></i>',
-								elPagi = element.attr('data-pagi'),
-								elMargin = element.attr('data-margin') || 20,
-								elStage = element.attr('data-stage-padding') || 0,
-								elMerge = element.attr('data-merge'),
-								elStart = element.attr('data-start') || 0,
-								elRewind = element.attr('data-rewind'),
-								elSlideBy = element.attr('data-slideby') || 1,
-								elCenter = element.attr('data-center'),
-								elLazy = element.attr('data-lazyload'),
-								elVideo = element.attr('data-video'),
-								elRTL = element.attr('data-rtl'),
-								elAutoPlayTime = 5000,
-								elAutoPlayHoverP = true;
+								domEl = this;
 
-							if( elSlideBy == 'page' ) {
-								elSlideBy = 'page';
-							} else {
-								elSlideBy = Number(elSlideBy);
-							}
+							var initSingle = function() {
+								if( element.data('owl.carousel') || element.hasClass('owl-loaded') ) {
+									return;
+								}
 
-							if( elLoop == 'true' ){ elLoop = true; } else { elLoop = false; }
-							if( !elAutoPlay ){
-								elAutoPlay = false;
-								elAutoPlayHoverP = false;
-							} else {
-								elAutoPlayTime = Number(elAutoPlay);
-								elAutoPlay = true;
-							}
-							if( !elAnimateIn ) { elAnimateIn = false; }
-							if( !elAnimateOut ) { elAnimateOut = false; }
-							if( elAutoWidth == 'true' ){ elAutoWidth = true; } else { elAutoWidth = false; }
-							if( elNav == 'false' ){ elNav = false; } else { elNav = true; }
-							if( elPagi == 'false' ){ elPagi = false; } else { elPagi = true; }
-							if( elRewind == 'true' ){ elRewind = true; } else { elRewind = false; }
-							if( elMerge == 'true' ){ elMerge = true; } else { elMerge = false; }
-							if( elCenter == 'true' ){ elCenter = true; } else { elCenter = false; }
-							if( elLazy == 'true' ){ elLazy = true; } else { elLazy = false; }
-							if( elVideo == 'true' ){ elVideo = true; } else { elVideo = false; }
-							if( elRTL == 'true' || jQuery('body').hasClass('rtl') ){ elRTL = true; } else { elRTL = false; }
+								var elItems = element.attr('data-items') || 4,
+									elItemsXs = element.attr('data-items-xs') || Number( elItems ),
+									elItemsSm = element.attr('data-items-sm') || Number( elItemsXs ),
+									elItemsMd = element.attr('data-items-md') || Number( elItemsSm ),
+									elItemsLg = element.attr('data-items-lg') || Number( elItemsMd ),
+									elItemsXl = element.attr('data-items-xl') || Number( elItemsLg ),
+									elItemsXxl = element.attr('data-items-xxl') || Number( elItemsXl ),
+									elLoop = element.attr('data-loop'),
+									elAutoPlay = element.attr('data-autoplay'),
+									elSpeed = element.attr('data-speed') || 250,
+									elAnimateIn = element.attr('data-animate-in'),
+									elAnimateOut = element.attr('data-animate-out'),
+									elAutoWidth = element.attr('data-auto-width'),
+									elNav = element.attr('data-nav'),
+									elNavPrev = element.attr('data-nav-prev') || '<i class="uil uil-angle-left-b"></i>',
+									elNavNext = element.attr('data-nav-next') || '<i class="uil uil-angle-right-b"></i>',
+									elPagi = element.attr('data-pagi'),
+									elMargin = element.attr('data-margin') || 20,
+									elStage = element.attr('data-stage-padding') || 0,
+									elMerge = element.attr('data-merge'),
+									elStart = element.attr('data-start') || 0,
+									elRewind = element.attr('data-rewind'),
+									elSlideBy = element.attr('data-slideby') || 1,
+									elCenter = element.attr('data-center'),
+									elLazy = element.attr('data-lazyload'),
+									elVideo = element.attr('data-video'),
+									elRTL = element.attr('data-rtl'),
+									elAutoPlayTime = 5000,
+									elAutoPlayHoverP = true;
 
-							var carousel = element.owlCarousel({
-								margin: Number(elMargin),
-								loop: elLoop,
-								stagePadding: Number(elStage),
-								merge: elMerge,
-								startPosition: Number(elStart),
-								rewind: elRewind,
-								slideBy: elSlideBy,
-								center: elCenter,
-								lazyLoad: elLazy,
-								autoWidth: elAutoWidth,
-								nav: elNav,
-								navText: [elNavPrev,elNavNext],
-								autoplay: elAutoPlay,
-								autoplayTimeout: elAutoPlayTime,
-								autoplayHoverPause: elAutoPlayHoverP,
-								dots: elPagi,
-								smartSpeed: Number(elSpeed),
-								fluidSpeed: Number(elSpeed),
-								video: elVideo,
-								animateIn: elAnimateIn,
-								animateOut: elAnimateOut,
-								rtl: elRTL,
-								responsive:{
-									0:{ items: elItemsXs },
-									576:{ items: elItemsSm },
-									768:{ items: elItemsMd },
-									992:{ items: elItemsLg },
-									1200:{ items: elItemsXl },
-									1400:{ items: elItemsXxl }
-								},
-								onInitialized: function(){
-									__base.sliderDimensions(element.parents('.slider-element')[0]);
-									__core.runContainerModules(element[0]);
+								if( elSlideBy == 'page' ) {
+									elSlideBy = 'page';
+								} else {
+									elSlideBy = Number(elSlideBy);
+								}
 
-									if( element.find('.owl-dot').length > 0 ) {
-										element.addClass('with-carousel-dots');
+								if( elLoop == 'true' ){ elLoop = true; } else { elLoop = false; }
+								if( !elAutoPlay ){
+									elAutoPlay = false;
+									elAutoPlayHoverP = false;
+								} else {
+									elAutoPlayTime = Number(elAutoPlay);
+									elAutoPlay = true;
+								}
+								if( !elAnimateIn ) { elAnimateIn = false; }
+								if( !elAnimateOut ) { elAnimateOut = false; }
+								if( elAutoWidth == 'true' ){ elAutoWidth = true; } else { elAutoWidth = false; }
+								if( elNav == 'false' ){ elNav = false; } else { elNav = true; }
+								if( elPagi == 'false' ){ elPagi = false; } else { elPagi = true; }
+								if( elRewind == 'true' ){ elRewind = true; } else { elRewind = false; }
+								if( elMerge == 'true' ){ elMerge = true; } else { elMerge = false; }
+								if( elCenter == 'true' ){ elCenter = true; } else { elCenter = false; }
+								if( elLazy == 'true' ){ elLazy = true; } else { elLazy = false; }
+								if( elVideo == 'true' ){ elVideo = true; } else { elVideo = false; }
+								if( elRTL == 'true' || jQuery('body').hasClass('rtl') ){ elRTL = true; } else { elRTL = false; }
+
+								var carousel = element.owlCarousel({
+									margin: Number(elMargin),
+									loop: elLoop,
+									stagePadding: Number(elStage),
+									merge: elMerge,
+									startPosition: Number(elStart),
+									rewind: elRewind,
+									slideBy: elSlideBy,
+									center: elCenter,
+									lazyLoad: elLazy,
+									autoWidth: elAutoWidth,
+									nav: elNav,
+									navText: [elNavPrev,elNavNext],
+									autoplay: elAutoPlay,
+									autoplayTimeout: elAutoPlayTime,
+									autoplayHoverPause: elAutoPlayHoverP,
+									dots: elPagi,
+									smartSpeed: Number(elSpeed),
+									fluidSpeed: Number(elSpeed),
+									video: elVideo,
+									animateIn: elAnimateIn,
+									animateOut: elAnimateOut,
+									rtl: elRTL,
+									responsive:{
+										0:{ items: elItemsXs },
+										576:{ items: elItemsSm },
+										768:{ items: elItemsMd },
+										992:{ items: elItemsLg },
+										1200:{ items: elItemsXl },
+										1400:{ items: elItemsXxl }
+									},
+									onInitialized: function(){
+										__base.sliderDimensions(element.parents('.slider-element')[0]);
+										__core.runContainerModules(element[0]);
+
+										if( element.find('.owl-dot').length > 0 ) {
+											element.addClass('with-carousel-dots');
+										}
 									}
-								}
-							});
+								});
 
-							jQuery(window).on( 'lazyLoadLoaded', function(){
-								if( element.find('.lazy').length == element.find('.lazy.lazy-loaded').length ) {
-									lazyLoadInstance.update();
-									setTimeout( function(){
-										carousel.trigger( 'refresh.owl.carousel' );
-									}, 500);
+								jQuery(window).on( 'lazyLoadLoaded', function(){
+									if( element.find('.lazy').length == element.find('.lazy.lazy-loaded').length ) {
+										lazyLoadInstance.update();
+										setTimeout( function(){
+											carousel.trigger( 'refresh.owl.carousel' );
+										}, 500);
+									}
+								});
+							};
+
+							if( 'IntersectionObserver' in window && domEl.parentElement ) {
+								var observer = new IntersectionObserver( function(entries, obs) {
+									entries.forEach( function(entry) {
+										if( entry.isIntersecting ) {
+											initSingle();
+											obs.unobserve(entry.target);
+										}
+									});
+								}, { rootMargin: '300px 0px' });
+								observer.observe(domEl.parentElement);
+
+								if( 'requestIdleCallback' in window ) {
+									requestIdleCallback( initSingle, { timeout: 2000 } );
+								} else {
+									setTimeout( initSingle, 500 );
 								}
-							});
+							} else if( 'requestIdleCallback' in window ) {
+								requestIdleCallback( initSingle, { timeout: 1500 } );
+							} else {
+								setTimeout( initSingle, 100 );
+							}
 						});
 					});
 				}

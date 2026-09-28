@@ -28,31 +28,26 @@
 	<meta http-equiv="x-ua-compatible" content="IE=edge">
 	<link rel="canonical" href="https://valuecafe.cc/to-beginners/patience-and-discipline.html">
 
-	<!-- Font Imports -->
+	<!-- Font Imports (Non-blocking async load) -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap">
+	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap" media="print" onload="this.media='all'">
 
-	<!-- CSS -->
-	<link rel="stylesheet" href="../style.css?v=0">
-	<link rel="stylesheet" href="../css/font-icons.css?v=0">
-	<link rel="stylesheet" href="../css/custom.css?v=0">
-	<link rel="stylesheet" href="../css/components.css?v=0">
-	<link rel="stylesheet" href="../css/params.css?v=0">
-	<link rel="stylesheet" href="../css/pages.css?v=0">
-	<link rel="stylesheet" href="../css/widgets.css?v=0">
+	<!-- Core CSS -->
+	<link rel="stylesheet" href="../style.min.css?v=1">
+	<link rel="stylesheet" href="../css/app.min.css?v=1">
 
-	<!-- Noscript -->
+	<!-- Icons (Non-blocking async load) -->
+	<link rel="preload" as="style" href="../css/font-icons.css?v=1">
+	<link rel="stylesheet" href="../css/font-icons.css?v=1" media="print" onload="this.media='all'">
+
+	<!-- Noscript Fallback -->
 	<noscript>
-
-		<link rel="stylesheet" href="../style.css?v=0">
-		<link rel="stylesheet" href="../css/font-icons.css?v=0">
-		<link rel="stylesheet" href="../css/custom.css?v=0">
-		<link rel="stylesheet" href="../css/components.css?v=0">
-		<link rel="stylesheet" href="../css/params.css?v=0">
-		<link rel="stylesheet" href="../css/widgets.css?v=0">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap">
-
+		<link rel="stylesheet" href="../style.min.css?v=1">
+		<link rel="stylesheet" href="../css/app.min.css?v=1">
+		<link rel="stylesheet" href="../css/font-icons.css?v=1">
 	</noscript>
 
 	<!-- Favicon -->
@@ -113,7 +108,7 @@
 					<div class="header-row justify-content-lg-between">
 						<!-- Logo -->
 						<div id="logo" class="me-lg-0 col-lg-3">
-							<a href="../"><img class="logo" src="../images/logo.svg" alt="ValueCafe"></a>
+							<a href="../"><img class="logo" src="../images/logo.svg" alt="ValueCafe" loading="lazy" decoding="async"></a>
 						</div>
 						<!-- Misc -->
 						<div class="header-misc col-lg-3 justify-content-lg-end ms-0">
@@ -226,7 +221,7 @@
 							</div>
 						</div>
 						<div class="col-lg-6">
-							<img src="../images/to-beginners/patience-and-discipline/cover.webp" alt="Investing Patience">
+							<img src="../images/to-beginners/patience-and-discipline/cover.webp" alt="Investing Patience" loading="lazy" decoding="async">
 						</div>
 					</div>
 				</div>
@@ -265,7 +260,7 @@
 									<p>Short-term price swings, all those fancy technical indicators—that's all stuff that came later. That shouldn't be what you, as a value investor, are chasing.</p>
 									<p>The reason you make a profit on the sale (the "price difference") is that the company you stuck with actually got better. They worked hard, made more money, and that made the shares you own more valuable. That's why you can sell them for a higher price down the road.</p>
 									<p>So, from day one, what you should be focused on is the business's value, not its short-term stock price.</p>
-									<img src="../images/to-beginners/patience-and-discipline/image1.webp" alt="Investing Patience">
+									<img src="../images/to-beginners/patience-and-discipline/image1.webp" alt="Investing Patience" loading="lazy" decoding="async">
 									<h3 class="inside">Short-Term Noise</h3>
 									<p>In the short run, the stock market is affected by all kinds of noise. The common ones are things like policy changes, political drama, and speculation. A lot of that noise is just us psyching ourselves out—like worrying when interest rates go up, and then also worrying when they go down.</p>
 									<p>As Benjamin Graham famously taught: <strong>"In the short run, the market is a voting machine (measuring popularity and emotion), but in the long run, it is a weighing machine (measuring real substance and earnings)."</strong></p>
@@ -297,7 +292,7 @@
 									<p>Finally, let's talk again about the sweet payoff that comes from compound interest.</p>
 									<p>Let's say you invest $10,000 every year with an average return of 5% (which plenty of ETFs can hit). By year 20, you'll have invested a total principal of $200,000. But you'll end up with $347,193. That's a 173.5% rate of return.</p>
 									<p>If you can get an average return of 8%, then by year 20, your rate of return is 247.1%. This is a solid result from compounding, and it doesn't require you to gamble your life savings by trading in and out of the market.</p>
-									<img src="../images/to-beginners/patience-and-discipline/image2.webp" alt="Investing Patience">
+									<img src="../images/to-beginners/patience-and-discipline/image2.webp" alt="Investing Patience" loading="lazy" decoding="async">
 									<p>When you can successfully ride out the short-term volatility and just hold a company's stock for the long haul, letting the business make money for you over time, you won't just get incredible returns—you'll also sleep soundly at night.</p>
 									<p>Compared to working hard to read a ton of information every day only to frequently adjust your strategy, <strong>holding for the long term</strong> is the real principle value investors should be sticking to.</p>
 									<hr class="my-4">
@@ -365,7 +360,7 @@
 					<div class="row col-mb-30">
 						<div class="col-lg-4">
 							<div class="widget">
-								<img src="../images/logo-footer.svg" alt="ValueCafe" class="footer-logo">
+								<img src="../images/logo-footer.svg" alt="ValueCafe" class="footer-logo" loading="lazy" decoding="async">
 								<div class="sns">
 									<div class="item">
 										<a href="mailto:valuecafecc@gmail.com" target="_blank"><i class="bi-envelope"></i> valuecafecc@gmail.com</a>
@@ -432,8 +427,8 @@
 	<div id="gotoTop" class="uil uil-angle-up"></div>
 
 	<!-- JavaScripts -->
-	<script src="../js/plugins.min.js"></script>
-	<script src="../js/functions.bundle.js"></script>
+	<script defer src="../js/plugins.min.js"></script>
+	<script defer src="../js/functions.bundle.js"></script>
 
 </body>
 </html>

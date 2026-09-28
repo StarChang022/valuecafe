@@ -33,31 +33,26 @@
 	<link rel="api-catalog" href="/.well-known/api-catalog">
 	<link rel="describedby" href="/.well-known/openapi.json" type="application/json">
 
-	<!-- Font Imports -->
+	<!-- Font Imports (Non-blocking async load) -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap">
+	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap" media="print" onload="this.media='all'">
 
-	<!-- CSS -->
-	<link rel="stylesheet" href="../style.css?v=0">
-	<link rel="stylesheet" href="../css/font-icons.css?v=0">
-	<link rel="stylesheet" href="../css/custom.css?v=0">
-	<link rel="stylesheet" href="../css/components.css?v=0">
-	<link rel="stylesheet" href="../css/params.css?v=0">
-	<link rel="stylesheet" href="../css/pages.css?v=0">
-	<link rel="stylesheet" href="../css/widgets.css?v=0">
+	<!-- Core CSS -->
+	<link rel="stylesheet" href="../style.min.css?v=1">
+	<link rel="stylesheet" href="../css/app.min.css?v=1">
 
-	<!-- Noscript -->
+	<!-- Icons (Non-blocking async load) -->
+	<link rel="preload" as="style" href="../css/font-icons.css?v=1">
+	<link rel="stylesheet" href="../css/font-icons.css?v=1" media="print" onload="this.media='all'">
+
+	<!-- Noscript Fallback -->
 	<noscript>
-
-		<link rel="stylesheet" href="../style.css?v=0">
-		<link rel="stylesheet" href="../css/font-icons.css?v=0">
-		<link rel="stylesheet" href="../css/custom.css?v=0">
-		<link rel="stylesheet" href="../css/components.css?v=0">
-		<link rel="stylesheet" href="../css/params.css?v=0">
-		<link rel="stylesheet" href="../css/widgets.css?v=0">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap">
-
+		<link rel="stylesheet" href="../style.min.css?v=1">
+		<link rel="stylesheet" href="../css/app.min.css?v=1">
+		<link rel="stylesheet" href="../css/font-icons.css?v=1">
 	</noscript>
 
 	<!-- Favicon -->
@@ -118,7 +113,7 @@
 					<div class="header-row justify-content-lg-between">
 						<!-- Logo -->
 						<div id="logo" class="me-lg-0 col-lg-3">
-							<a href="../"><img class="logo" src="../images/logo.svg" alt="ValueCafe"></a>
+							<a href="../"><img class="logo" src="../images/logo.svg" alt="ValueCafe" loading="lazy" decoding="async"></a>
 						</div>
 						<!-- Misc -->
 						<div class="header-misc col-lg-3 justify-content-lg-end ms-0">
@@ -230,7 +225,7 @@
 								<p class="description">If you rely solely on the debt ratio, you might reach the wrong conclusion. You need to avoid the blind spot of looking at just one single metric. I will show you how to use it alongside the "Interest Coverage Ratio" and <a href="free-cash-flow.html">"Free Cash Flow."</a> That way, you can tell if the company is "<strong>borrowing to invest in the future</strong>" or just "<strong>borrowing to stay alive</strong>".</p>
 							</div>
 						</div>
-						<img src="../images/financial-ratios/debt-ratio/cover.webp" alt="Debt Ratio">
+						<img src="../images/financial-ratios/debt-ratio/cover.webp" alt="Debt Ratio" loading="lazy" decoding="async">
 					</div>
 				</div>
 			</div>
@@ -431,7 +426,7 @@
 							<a href="free-cash-flow.html">
 								<div class="cards photo-text-media">
 									<div class="image">
-										<img src="../images/financial-ratios/free-cash-flow/cover.webp" alt="How do you read 'Free Cash Flow' ? Why seeing a negative number sometimes isn't a bad thing.">
+										<img src="../images/financial-ratios/free-cash-flow/cover.webp" alt="How do you read 'Free Cash Flow' ? Why seeing a negative number sometimes isn't a bad thing." loading="lazy" decoding="async">
 									</div>
 									<div class="column">
 										<h3 class="inside">How do you read 'Free Cash Flow' ? Why seeing a negative number sometimes isn't a bad thing.</h3>
@@ -443,7 +438,7 @@
 							<a href="roe-and-roa.html">
 								<div class="cards photo-text-media">
 									<div class="image">
-										<img src="../images/financial-ratios/roe-and-roa/cover.webp" alt="ROE and ROA : Judging a company's efficiency and quality, is your money actually being put to good use?">
+										<img src="../images/financial-ratios/roe-and-roa/cover.webp" alt="ROE and ROA : Judging a company's efficiency and quality, is your money actually being put to good use?" loading="lazy" decoding="async">
 									</div>
 									<div class="column">
 										<h3 class="inside">ROE and ROA : Judging a company's efficiency and quality, is your money actually being put to good use?</h3>
@@ -455,7 +450,7 @@
 							<a href="dividend-yield.html">
 								<div class="cards photo-text-media">
 									<div class="image">
-										<img src="../images/financial-ratios/dividend-yield/cover.webp" alt="Is a higher 'Dividend Yield' always better? Watch out for high-yield traps and understand what dividends really are.">
+										<img src="../images/financial-ratios/dividend-yield/cover.webp" alt="Is a higher 'Dividend Yield' always better? Watch out for high-yield traps and understand what dividends really are." loading="lazy" decoding="async">
 									</div>
 									<div class="column">
 										<h3 class="inside">Is a higher 'Dividend Yield' always better? Watch out for high-yield traps and understand what dividends really are.</h3>
@@ -467,7 +462,7 @@
 							<a href="profit-margin.html">
 								<div class="cards photo-text-media">
 									<div class="image">
-										<img src="../images/financial-ratios/profit-margin/cover.webp" alt="Profit Margins : The key to reading a company's story, understanding its pricing power, and decoding its core competitiveness from the income statement">
+										<img src="../images/financial-ratios/profit-margin/cover.webp" alt="Profit Margins : The key to reading a company's story, understanding its pricing power, and decoding its core competitiveness from the income statement" loading="lazy" decoding="async">
 									</div>
 									<div class="column">
 										<h3 class="inside">Profit Margins : The key to reading a company's story, understanding its pricing power, and decoding its core competitiveness from the income statement</h3>
@@ -479,7 +474,7 @@
 							<a href="current-ratio-and-quick-ratio.html">
 								<div class="cards photo-text-media">
 									<div class="image">
-										<img src="../images/financial-ratios/current-ratio-and-quick-ratio/cover.webp" alt="What are the 'Current Ratio and Quick Ratio' ? Think of them as the 'Financial first aid kit' for a company's ability to pay debts.">
+										<img src="../images/financial-ratios/current-ratio-and-quick-ratio/cover.webp" alt="What are the 'Current Ratio and Quick Ratio' ? Think of them as the 'Financial first aid kit' for a company's ability to pay debts." loading="lazy" decoding="async">
 									</div>
 									<div class="column">
 										<h3 class="inside">What are the 'Current Ratio and Quick Ratio' ? Think of them as the 'Financial first aid kit' for a company's ability to pay debts.</h3>
@@ -510,7 +505,7 @@
 					<div class="row col-mb-30">
 						<div class="col-lg-4">
 							<div class="widget">
-								<img src="../images/logo-footer.svg" alt="ValueCafe" class="footer-logo">
+								<img src="../images/logo-footer.svg" alt="ValueCafe" class="footer-logo" loading="lazy" decoding="async">
 								<div class="sns">
 									<div class="item">
 										<a href="mailto:valuecafecc@gmail.com" target="_blank"><i class="bi-envelope"></i> valuecafecc@gmail.com</a>
@@ -577,8 +572,8 @@
 	<div id="gotoTop" class="uil uil-angle-up"></div>
 
 	<!-- JavaScripts -->
-	<script src="../js/plugins.min.js"></script>
-	<script src="../js/functions.bundle.js"></script>
+	<script defer src="../js/plugins.min.js"></script>
+	<script defer src="../js/functions.bundle.js"></script>
 
 </body>
 </html>

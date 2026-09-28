@@ -33,31 +33,26 @@
 	<link rel="api-catalog" href="/.well-known/api-catalog">
 	<link rel="describedby" href="/.well-known/openapi.json" type="application/json">
 
-	<!-- Font Imports -->
+	<!-- Font Imports (Non-blocking async load) -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap">
+	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap" media="print" onload="this.media='all'">
 
-	<!-- CSS -->
-	<link rel="stylesheet" href="style.css?v=0">
-	<link rel="stylesheet" href="css/font-icons.css?v=0">
-	<link rel="stylesheet" href="css/custom.css?v=0">
-	<link rel="stylesheet" href="css/components.css?v=0">
-	<link rel="stylesheet" href="css/params.css?v=0">
-	<link rel="stylesheet" href="css/pages.css?v=0">
-	<link rel="stylesheet" href="css/widgets.css?v=0">
+	<!-- Core CSS -->
+	<link rel="stylesheet" href="style.min.css?v=1">
+	<link rel="stylesheet" href="css/app.min.css?v=1">
 
-	<!-- Noscript -->
+	<!-- Icons (Non-blocking async load) -->
+	<link rel="preload" as="style" href="css/font-icons.css?v=1">
+	<link rel="stylesheet" href="css/font-icons.css?v=1" media="print" onload="this.media='all'">
+
+	<!-- Noscript Fallback -->
 	<noscript>
-
-		<link rel="stylesheet" href="style.css?v=0">
-		<link rel="stylesheet" href="css/font-icons.css?v=0">
-		<link rel="stylesheet" href="css/custom.css?v=0">
-		<link rel="stylesheet" href="css/components.css?v=0">
-		<link rel="stylesheet" href="css/params.css?v=0">
-		<link rel="stylesheet" href="css/widgets.css?v=0">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap">
-
+		<link rel="stylesheet" href="style.min.css?v=1">
+		<link rel="stylesheet" href="css/app.min.css?v=1">
+		<link rel="stylesheet" href="css/font-icons.css?v=1">
 	</noscript>
 
 	<!-- Favicon -->
@@ -114,7 +109,7 @@
 					<div class="header-row justify-content-lg-between">
 						<!-- Logo -->
 						<div id="logo" class="me-lg-0 col-lg-3">
-							<a href="/"><img class="logo" src="images/logo.svg" alt="ValueCafe"></a>
+							<a href="/"><img class="logo" src="images/logo.svg" alt="ValueCafe" loading="lazy" decoding="async"></a>
 						</div>
 						<!-- Misc -->
 						<div class="header-misc col-lg-3 justify-content-lg-end ms-0">
@@ -280,7 +275,7 @@
 					<div class="row col-mb-30">
 						<div class="col-lg-4">
 							<div class="widget">
-								<img src="images/logo-footer.svg" alt="ValueCafe" class="footer-logo">
+								<img src="images/logo-footer.svg" alt="ValueCafe" class="footer-logo" loading="lazy" decoding="async">
 								<div class="sns">
 									<div class="item">
 										<a href="mailto:valuecafecc@gmail.com" target="_blank"><i class="bi-envelope"></i> valuecafecc@gmail.com</a>
@@ -347,11 +342,11 @@
 	<div id="gotoTop" class="uil uil-angle-up"></div>
 
 	<!-- JavaScripts -->
-	<script src="js/plugins.min.js"></script>
-	<script src="js/functions.bundle.js"></script>
+	<script defer src="js/plugins.min.js"></script>
+	<script defer src="js/functions.bundle.js"></script>
 
 	<!-- WebMCP -->
-	<script src="/js/webmcp.js"></script>
+	<script defer src="/js/webmcp.js"></script>
 
 </body>
 </html>

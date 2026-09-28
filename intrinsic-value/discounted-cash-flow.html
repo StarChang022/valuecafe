@@ -33,31 +33,26 @@
 	<link rel="api-catalog" href="/.well-known/api-catalog">
 	<link rel="describedby" href="/.well-known/openapi.json" type="application/json">
 
-	<!-- Font Imports -->
+	<!-- Font Imports (Non-blocking async load) -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap">
+	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap" media="print" onload="this.media='all'">
 
-	<!-- CSS -->
-	<link rel="stylesheet" href="../style.css?v=0">
-	<link rel="stylesheet" href="../css/font-icons.css?v=0">
-	<link rel="stylesheet" href="../css/custom.css?v=0">
-	<link rel="stylesheet" href="../css/components.css?v=0">
-	<link rel="stylesheet" href="../css/params.css?v=0">
-	<link rel="stylesheet" href="../css/pages.css?v=0">
-	<link rel="stylesheet" href="../css/widgets.css?v=0">
+	<!-- Core CSS -->
+	<link rel="stylesheet" href="../style.min.css?v=1">
+	<link rel="stylesheet" href="../css/app.min.css?v=1">
 
-	<!-- Noscript -->
+	<!-- Icons (Non-blocking async load) -->
+	<link rel="preload" as="style" href="../css/font-icons.css?v=1">
+	<link rel="stylesheet" href="../css/font-icons.css?v=1" media="print" onload="this.media='all'">
+
+	<!-- Noscript Fallback -->
 	<noscript>
-
-		<link rel="stylesheet" href="../style.css?v=0">
-		<link rel="stylesheet" href="../css/font-icons.css?v=0">
-		<link rel="stylesheet" href="../css/custom.css?v=0">
-		<link rel="stylesheet" href="../css/components.css?v=0">
-		<link rel="stylesheet" href="../css/params.css?v=0">
-		<link rel="stylesheet" href="../css/widgets.css?v=0">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap">
-
+		<link rel="stylesheet" href="../style.min.css?v=1">
+		<link rel="stylesheet" href="../css/app.min.css?v=1">
+		<link rel="stylesheet" href="../css/font-icons.css?v=1">
 	</noscript>
 
 	<!-- Favicon -->
@@ -118,7 +113,7 @@
 					<div class="header-row justify-content-lg-between">
 						<!-- Logo -->
 						<div id="logo" class="me-lg-0 col-lg-3">
-							<a href="../"><img class="logo" src="../images/logo.svg" alt="ValueCafe"></a>
+							<a href="../"><img class="logo" src="../images/logo.svg" alt="ValueCafe" loading="lazy" decoding="async"></a>
 						</div>
 						<!-- Misc -->
 						<div class="header-misc col-lg-3 justify-content-lg-end ms-0">
@@ -230,7 +225,7 @@
 								<p class="description">Of course, you can't just look at this year's numbers. You have to look five or ten years down the road. That is why Buffett created a formula to estimate how much money a company will make in the future. He adjusts for inflation and then works backward to calculate its present value today. That tells us exactly how much "future value" we are buying right now.</p>
 							</div>
 						</div>
-						<img src="../images/intrinsic-value/discounted-cash-flow/cover.webp" alt="Discounted Cash Flow">
+						<img src="../images/intrinsic-value/discounted-cash-flow/cover.webp" alt="Discounted Cash Flow" loading="lazy" decoding="async">
 					</div>
 				</div>
 			</div>
@@ -288,7 +283,7 @@
 									<p>What is that future money worth right now? Deciding on your personal discount rate.</p>
 									<p>How do we size up the value for the long haul? Estimating a reasonable terminal value.</p>
 									<h3 class="inside">The Discounted Cash Flow formula model</h3>
-									<img src="../images/intrinsic-value/discounted-cash-flow/image-1.webp" alt="The Discounted Cash Flow formula model">
+									<img src="../images/intrinsic-value/discounted-cash-flow/image-1.webp" alt="The Discounted Cash Flow formula model" loading="lazy" decoding="async">
 									<p>CF = Your estimated "Free Cash Flow" for each future period. For example: 500k in year one, 550k in year two, 600k in year three, 650k in year four, and 700k in year five. We typically project the free cash flow for years one through five. For year six and beyond, we switch to using the terminal value.</p>
 									<p>r = The personal "discount rate" you decided on. Like that 13% we just mentioned.</p>
 									<p>TV = The "terminal value" you estimated. For instance, if you think you could sell the coffee shop at the end of year five for 10 times that year's free cash flow (which is 700k), you would plug in 7 million.</p>
@@ -367,7 +362,7 @@
 							<a href="pb-ratio.html">
 								<div class="cards photo-text-media">
 									<div class="image">
-										<img src="../images/intrinsic-value/pb-ratio/cover.webp" alt="P/B Ratio : Is lower really better? You can't pick a champion racehorse just by looking at its weight.">
+										<img src="../images/intrinsic-value/pb-ratio/cover.webp" alt="P/B Ratio : Is lower really better? You can't pick a champion racehorse just by looking at its weight." loading="lazy" decoding="async">
 									</div>
 									<div class="column">
 										<h3 class="inside">P/B Ratio : Is lower really better? You can't pick a champion racehorse just by looking at its weight.</h3>
@@ -379,7 +374,7 @@
 							<a href="cigar-butt-investing.html">
 								<div class="cards photo-text-media">
 									<div class="image">
-										<img src="../images/intrinsic-value/cigar-butt-investing/cover.webp" alt="Cigar Butt Investing : This is the strategy Warren Buffett used to build his early wealth. Let's talk about what makes it worth learning.">
+										<img src="../images/intrinsic-value/cigar-butt-investing/cover.webp" alt="Cigar Butt Investing : This is the strategy Warren Buffett used to build his early wealth. Let's talk about what makes it worth learning." loading="lazy" decoding="async">
 									</div>
 									<div class="column">
 										<h3 class="inside">Cigar Butt Investing : This is the strategy Warren Buffett used to build his early wealth. Let's talk about what makes it worth learning.</h3>
@@ -391,7 +386,7 @@
 							<a href="dividend-yield-valuation.html">
 								<div class="cards photo-text-media">
 									<div class="image">
-										<img src="../images/intrinsic-value/dividend-yield-valuation/cover.webp" alt="Dividend Yield Valuation : Use these 3 steps to work backward and find the intrinsic value.">
+										<img src="../images/intrinsic-value/dividend-yield-valuation/cover.webp" alt="Dividend Yield Valuation : Use these 3 steps to work backward and find the intrinsic value." loading="lazy" decoding="async">
 									</div>
 									<div class="column">
 										<h3 class="inside">Dividend Yield Valuation : Use these 3 steps to work backward and find the intrinsic value.</h3>
@@ -403,7 +398,7 @@
 							<a href="pe-ratio.html">
 								<div class="cards photo-text-media">
 									<div class="image">
-										<img src="../images/intrinsic-value/pe-ratio/cover.webp" alt="P/E Ratio : When valuing a stock, don't just look at the numbers! You need to understand the business behind those numbers.">
+										<img src="../images/intrinsic-value/pe-ratio/cover.webp" alt="P/E Ratio : When valuing a stock, don't just look at the numbers! You need to understand the business behind those numbers." loading="lazy" decoding="async">
 									</div>
 									<div class="column">
 										<h3 class="inside">P/E Ratio : When valuing a stock, don't just look at the numbers! You need to understand the business behind those numbers.</h3>
@@ -434,7 +429,7 @@
 					<div class="row col-mb-30">
 						<div class="col-lg-4">
 							<div class="widget">
-								<img src="../images/logo-footer.svg" alt="ValueCafe" class="footer-logo">
+								<img src="../images/logo-footer.svg" alt="ValueCafe" class="footer-logo" loading="lazy" decoding="async">
 								<div class="sns">
 									<div class="item">
 										<a href="mailto:valuecafecc@gmail.com" target="_blank"><i class="bi-envelope"></i> valuecafecc@gmail.com</a>
@@ -501,8 +496,8 @@
 	<div id="gotoTop" class="uil uil-angle-up"></div>
 
 	<!-- JavaScripts -->
-	<script src="../js/plugins.min.js"></script>
-	<script src="../js/functions.bundle.js"></script>
+	<script defer src="../js/plugins.min.js"></script>
+	<script defer src="../js/functions.bundle.js"></script>
 
 </body>
 </html>

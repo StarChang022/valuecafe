@@ -33,31 +33,26 @@
 	<link rel="api-catalog" href="/.well-known/api-catalog">
 	<link rel="describedby" href="/.well-known/openapi.json" type="application/json">
 
-	<!-- Font Imports -->
+	<!-- Font Imports (Non-blocking async load) -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap">
+	<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap" media="print" onload="this.media='all'">
 
-	<!-- CSS -->
-	<link rel="stylesheet" href="../style.css?v=0">
-	<link rel="stylesheet" href="../css/font-icons.css?v=0">
-	<link rel="stylesheet" href="../css/custom.css?v=0">
-	<link rel="stylesheet" href="../css/components.css?v=0">
-	<link rel="stylesheet" href="../css/params.css?v=0">
-	<link rel="stylesheet" href="../css/pages.css?v=0">
-	<link rel="stylesheet" href="../css/widgets.css?v=0">
+	<!-- Core CSS -->
+	<link rel="stylesheet" href="../style.min.css?v=1">
+	<link rel="stylesheet" href="../css/app.min.css?v=1">
 
-	<!-- Noscript -->
+	<!-- Icons (Non-blocking async load) -->
+	<link rel="preload" as="style" href="../css/font-icons.css?v=1">
+	<link rel="stylesheet" href="../css/font-icons.css?v=1" media="print" onload="this.media='all'">
+
+	<!-- Noscript Fallback -->
 	<noscript>
-
-		<link rel="stylesheet" href="../style.css?v=0">
-		<link rel="stylesheet" href="../css/font-icons.css?v=0">
-		<link rel="stylesheet" href="../css/custom.css?v=0">
-		<link rel="stylesheet" href="../css/components.css?v=0">
-		<link rel="stylesheet" href="../css/params.css?v=0">
-		<link rel="stylesheet" href="../css/widgets.css?v=0">
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap">
-
+		<link rel="stylesheet" href="../style.min.css?v=1">
+		<link rel="stylesheet" href="../css/app.min.css?v=1">
+		<link rel="stylesheet" href="../css/font-icons.css?v=1">
 	</noscript>
 
 	<!-- Favicon -->
@@ -118,7 +113,7 @@
 					<div class="header-row justify-content-lg-between">
 						<!-- Logo -->
 						<div id="logo" class="me-lg-0 col-lg-3">
-							<a href="../"><img class="logo" src="../images/logo.svg" alt="ValueCafe"></a>
+							<a href="../"><img class="logo" src="../images/logo.svg" alt="ValueCafe" loading="lazy" decoding="async"></a>
 						</div>
 						<!-- Misc -->
 						<div class="header-misc col-lg-3 justify-content-lg-end ms-0">
@@ -239,7 +234,7 @@
 								</div>
 							</div>
 						</div>
-						<img src="../images/news/20260810-ai-capex-big-tech-nvidia-analysis/cover.webp" alt="Big Tech Pouring $1T into AI CapEx Yet NVIDIA Stagnates? The CapEx Shift and New Supply Chain Winners">
+						<img src="../images/news/20260810-ai-capex-big-tech-nvidia-analysis/cover.webp" alt="Big Tech Pouring $1T into AI CapEx Yet NVIDIA Stagnates? The CapEx Shift and New Supply Chain Winners" loading="lazy" decoding="async">
 					</div>
 				</div>
 			</div>
@@ -322,7 +317,7 @@
 							<a href="20260816-amat-earnings-fast-paced-bull-market-investing-strategy.html">
 								<div class="cards photo-text-media">
 									<div class="image">
-										<img src="../images/news/20260816-amat-earnings-fast-paced-bull-market-investing-strategy/cover.webp" alt="Applied Materials reported better-than-expected earnings, but its stock price fell! The accelerating bull market has boosted investor expectations.">
+										<img src="../images/news/20260816-amat-earnings-fast-paced-bull-market-investing-strategy/cover.webp" alt="Applied Materials reported better-than-expected earnings, but its stock price fell! The accelerating bull market has boosted investor expectations." loading="lazy" decoding="async">
 									</div>
 									<div class="column">
 										<time datetime="2026-08-16">2026-08-16</time>
@@ -339,7 +334,7 @@
 							<a href="20260813-global-sme-insolvencies-quiet-exit-k-shaped-economy.html">
 								<div class="cards photo-text-media">
 									<div class="image">
-										<img src="../images/news/20260813-global-sme-insolvencies-quiet-exit-k-shaped-economy/cover.webp" alt="Is a wave of small business bankruptcies quietly spreading from Australia to the world? The economy is turning K-shaped">
+										<img src="../images/news/20260813-global-sme-insolvencies-quiet-exit-k-shaped-economy/cover.webp" alt="Is a wave of small business bankruptcies quietly spreading from Australia to the world? The economy is turning K-shaped" loading="lazy" decoding="async">
 									</div>
 									<div class="column">
 										<time datetime="2026-08-13">2026-08-13</time>
@@ -356,7 +351,7 @@
 							<a href="20260811-nvidia-500b-ai-infrastructure-financing-platform.html">
 								<div class="cards photo-text-media">
 									<div class="image">
-										<img src="../images/news/20260811-nvidia-500b-ai-infrastructure-financing-platform/cover.webp" alt="NVIDIA Teams with 6 Wall Street Giants to Mobilize $500B: How Compute Financialization Solves AI Circular Financing and CapEx Headwinds">
+										<img src="../images/news/20260811-nvidia-500b-ai-infrastructure-financing-platform/cover.webp" alt="NVIDIA Teams with 6 Wall Street Giants to Mobilize $500B: How Compute Financialization Solves AI Circular Financing and CapEx Headwinds" loading="lazy" decoding="async">
 									</div>
 									<div class="column">
 										<time datetime="2026-08-11">2026-08-11</time>
@@ -373,7 +368,7 @@
 						<a href="https://www.amazon.com/dp/1982172002" target="_blank" data-gtm-type="ads-books" data-gtm-name="books-chip-war">
 							<div class="cards photo-text-media">
 								<div class="cards image-around">
-									<img src="../images/recomm-books.webp" alt="Chip War: The Fight for the World's Most Critical Technology">
+									<img src="../images/recomm-books.webp" alt="Chip War: The Fight for the World's Most Critical Technology" loading="lazy" decoding="async">
 									<div class="content top-left">
 										<ul class="tags">
 											<li class="orange">Books</li>
@@ -390,7 +385,7 @@
 							<a href="20260808-cxmt-expansion-micron-stock-analysis.html">
 								<div class="cards photo-text-media">
 									<div class="image">
-										<img src="../images/news/20260808-cxmt-expansion-micron-stock-analysis/cover.webp" alt="CXMT Expanding Aggressively, Why Did Micron Stock Rise Instead of Fall? Decoding Global Memory's Parallel Worlds and True Winners">
+										<img src="../images/news/20260808-cxmt-expansion-micron-stock-analysis/cover.webp" alt="CXMT Expanding Aggressively, Why Did Micron Stock Rise Instead of Fall? Decoding Global Memory's Parallel Worlds and True Winners" loading="lazy" decoding="async">
 									</div>
 									<div class="column">
 										<time datetime="2026-08-08">2026-08-08</time>
@@ -407,7 +402,7 @@
 							<a href="20260801-memory-stocks-selloff-but-supply-crunch.html">
 								<div class="cards photo-text-media">
 									<div class="image">
-										<img src="../images/news/20260801-memory-stocks-selloff-but-supply-crunch/cover.webp" alt="Terrified by the Memory Stock Selloff? Supply Crunch Will Actually Last Until 2029">
+										<img src="../images/news/20260801-memory-stocks-selloff-but-supply-crunch/cover.webp" alt="Terrified by the Memory Stock Selloff? Supply Crunch Will Actually Last Until 2029" loading="lazy" decoding="async">
 									</div>
 									<div class="column">
 										<time datetime="2026-08-01">2026-08-01</time>
@@ -424,7 +419,7 @@
 							<a href="20260723-iran-war-economic-stock-impact.html">
 								<div class="cards photo-text-media">
 									<div class="image">
-										<img src="../images/news/20260723-iran-war-economic-stock-impact/cover.webp" alt="When will the Iran war end? How surging oil prices impact the global economy and US stock sectors">
+										<img src="../images/news/20260723-iran-war-economic-stock-impact/cover.webp" alt="When will the Iran war end? How surging oil prices impact the global economy and US stock sectors" loading="lazy" decoding="async">
 									</div>
 									<div class="column">
 										<time datetime="2026-07-23">2026-07-23</time>
@@ -441,7 +436,7 @@
 						<a href="https://www.coursera.org/specializations/deep-learning" target="_blank" data-gtm-type="ads-courses" data-gtm-name="courses-deep-learning-specialization">
 							<div class="cards photo-text-media">
 								<div class="cards image-around">
-									<img src="../images/recomm-courses.webp" alt="Deep Learning Specialization">
+									<img src="../images/recomm-courses.webp" alt="Deep Learning Specialization" loading="lazy" decoding="async">
 									<div class="content top-left">
 										<ul class="tags">
 											<li class="green">Courses</li>
@@ -477,7 +472,7 @@
 					<div class="row col-mb-30">
 						<div class="col-lg-4">
 							<div class="widget">
-								<img src="../images/logo-footer.svg" alt="ValueCafe" class="footer-logo">
+								<img src="../images/logo-footer.svg" alt="ValueCafe" class="footer-logo" loading="lazy" decoding="async">
 								<div class="sns">
 									<div class="item">
 										<a href="mailto:valuecafecc@gmail.com" target="_blank"><i class="bi-envelope"></i> valuecafecc@gmail.com</a>
@@ -544,8 +539,8 @@
 	<div id="gotoTop" class="uil uil-angle-up"></div>
 
 	<!-- JavaScripts -->
-	<script src="../js/plugins.min.js"></script>
-	<script src="../js/functions.bundle.js"></script>
+	<script defer src="../js/plugins.min.js"></script>
+	<script defer src="../js/functions.bundle.js"></script>
 
 </body>
 </html>

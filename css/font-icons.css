@@ -1,6 +1,22 @@
-@import url("icons/font-awesome.css"); /* Ref: https://fontawesome.com/search?o=r&m=free */
 @import url("icons/bootstrap-icons.css"); /* Ref: https://icons.getbootstrap.com/#icons */
-@import url("icons/unicons.css"); /* Ref: https://iconscout.com/unicons/explore/line */
+
+/* Fallback for legacy uil- icons using bootstrap-icons */
+.uil-angle-up::before {
+	font-family: "bootstrap-icons" !important;
+	content: "\f286" !important; /* bi-chevron-up */
+}
+.uil-plus::before {
+	font-family: "bootstrap-icons" !important;
+	content: "\f4fe" !important; /* bi-plus */
+}
+.uil-angle-left-b::before {
+	font-family: "bootstrap-icons" !important;
+	content: "\f284" !important; /* bi-chevron-left */
+}
+.uil-angle-right-b::before {
+	font-family: "bootstrap-icons" !important;
+	content: "\f285" !important; /* bi-chevron-right */
+}
 
 [class*="fa-"],
 [class*=" fa-"],
@@ -10,7 +26,6 @@
 [class*=" uil-"] {
 	display: inline-block;
 	line-height: inherit;
-	font-display: swap;
 }
 
 [class*="fa-"]::before,
