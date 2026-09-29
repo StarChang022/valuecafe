@@ -110,6 +110,16 @@ def build():
     print(f"✓ Built css/app.css ({len(app_css):,} bytes)")
     print(f"✓ Built css/app.min.css ({len(app_min):,} bytes)")
 
+    # 3. Append app.min into style.min.css (eliminates the second CSS HTTP request)
+    # Fix relative image paths: ../images/ -> images/ (style.min.css lives at root, not /css/)
+    app_min_for_merge = app_min.replace("url('../images/", "url('images/").replace('url("../images/', 'url("images/')
+    with open(style_min_path, "a", encoding="utf-8") as f:
+        f.write("\n" + app_min_for_merge)
+
+    with open(style_min_path, "r", encoding="utf-8") as f:
+        merged_size = len(f.read())
+    print(f"✓ Merged app.min.css into style.min.css (final: {merged_size:,} bytes)")
+
 
 if __name__ == "__main__":
     build()

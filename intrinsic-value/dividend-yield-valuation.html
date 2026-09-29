@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en-US">
+
 <head>
 
-	<!-- Google Analytics 4 -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-5PTYPV0S9P"></script>
+	<!-- Google Tag Manager (Optimized: Lazy Loaded on User Interaction) -->
 	<script>
 		window.dataLayer = window.dataLayer || [];
-		function gtag(){dataLayer.push(arguments);}
-		gtag('js', new Date());
-
-		gtag('config', 'G-5PTYPV0S9P');
+		(function () {
+			var gtmLoaded = false;
+			function loadGTM() {
+				if (gtmLoaded) return;
+				gtmLoaded = true;
+				window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+				var f = document.getElementsByTagName('script')[0],
+					j = document.createElement('script');
+				j.async = true;
+				j.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-M6FP6CGL';
+				f.parentNode.insertBefore(j, f);
+				['touchstart', 'scroll', 'mousemove', 'click', 'keydown'].forEach(function (e) {
+					window.removeEventListener(e, loadGTM, { passive: true });
+				});
+			}
+			['touchstart', 'scroll', 'mousemove', 'click', 'keydown'].forEach(function (e) {
+				window.addEventListener(e, loadGTM, { passive: true, once: true });
+			});
+			setTimeout(loadGTM, 3500);
+		})();
 	</script>
-
-	<!-- Google Tag Manager -->
-	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-	})(window,document,'script','dataLayer','GTM-M6FP6CGL');</script>
 
 	<!-- Basic -->
 	<meta charset="UTF-8">
@@ -41,7 +50,6 @@
 
 	<!-- Core CSS -->
 	<link rel="stylesheet" href="../style.min.css?v=1">
-	<link rel="stylesheet" href="../css/app.min.css?v=1">
 
 	<!-- Icons (Non-blocking async load) -->
 	<link rel="preload" as="style" href="../css/font-icons.css?v=1">
@@ -51,8 +59,7 @@
 	<noscript>
 		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital@0;1&display=swap">
 		<link rel="stylesheet" href="../style.min.css?v=1">
-		<link rel="stylesheet" href="../css/app.min.css?v=1">
-		<link rel="stylesheet" href="../css/font-icons.css?v=1">
+			<link rel="stylesheet" href="../css/font-icons.css?v=1">
 	</noscript>
 
 	<!-- Favicon -->
@@ -486,8 +493,13 @@
 	<div id="gotoTop" class="uil uil-angle-up"></div>
 
 	<!-- JavaScripts -->
-	<script defer src="../js/plugins.min.js"></script>
-	<script defer src="../js/functions.bundle.js"></script>
+	<script>
+		var cnvsOptions = {
+			jsFolder: '../js/',
+			cssFolder: '../css/'
+		};
+	</script>
+	<script defer src="../js/functions.js"></script>
 
 </body>
 </html>
