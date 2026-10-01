@@ -218,15 +218,59 @@
 		<!-- Content -->
 		<section id="content">
 			<div class="content-wrap">
-				<div class="container" style="max-width: 37.5rem;">
-					<div class="column column-list">
-						<h1 class="center">Contact</h1>
-						<div class="group-box solid">
-							<p>Hello, I'm STAR Chang, the editor-in-chief of ValueCafe. Thank you for visiting. If you have questions about value investing, editorial feedback, or are interested in a business collaboration, please feel free to reach out.</p>
-							<a href="mailto:valuecafecc@gmail.com" target="_blank"><i class="bi-envelope"></i> <strong>valuecafecc@gmail.com</strong></a>
+				<div class="container">
+					<h1 class="mb-4">Contact</h1>
+					<div class="row col-mb-50 gx-lg-5">
+						<div class="col-lg-6">
+							<div class="column column-list">
+								<div class="group-box solid">
+									<p>Hello, I'm STAR Chang, the editor-in-chief of ValueCafe. Thank you for visiting. If you have questions about value investing, editorial feedback, or are interested in a business collaboration, please feel free to reach out.</p>
+									<a href="mailto:valuecafecc@gmail.com" target="_blank"><i class="bi-envelope"></i> <strong>valuecafecc@gmail.com</strong></a>
+								</div>
+								<div>
+									<img src="images/contact/cover.webp" alt="Contact Us" loading="lazy" decoding="async">
+								</div>
+							</div>
 						</div>
-						<div>
-							<img src="images/contact/cover.webp" alt="Contact Us" loading="lazy" decoding="async">
+						<div class="col-lg-6">
+							<div class="contact-form-wrap">
+								<div class="form-result"></div>
+								<form class="mb-0" id="contact-form" name="contact-form" action="" method="post">
+									<div class="row g-3">
+										<div class="col-12 col-sm-6">
+											<label for="contact-name" class="form-label">Name <span class="text-danger">*</span></label>
+											<input type="text" id="contact-name" name="name" class="form-control" placeholder="Your Name" required>
+										</div>
+										<div class="col-12 col-sm-6">
+											<label for="contact-email" class="form-label">Email <span class="text-danger">*</span></label>
+											<input type="email" id="contact-email" name="email" class="form-control" placeholder="name@example.com" required>
+										</div>
+										<div class="col-12">
+											<label for="contact-subject" class="form-label">Subject <span class="text-danger">*</span></label>
+											<select id="contact-subject" name="subject" class="form-select" required>
+												<option value="" disabled selected>Select a subject</option>
+												<option value="General Inquiry">General Inquiry</option>
+												<option value="Article Feedback">Article Feedback</option>
+												<option value="Business Collaboration">Business Collaboration</option>
+												<option value="Other">Other</option>
+											</select>
+										</div>
+										<div class="col-12">
+											<label for="contact-message" class="form-label">Message <span class="text-danger">*</span></label>
+											<textarea id="contact-message" name="message" class="form-control" rows="5" placeholder="Write your message here..." required></textarea>
+										</div>
+										<div class="col-12">
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" id="privacy-consent" name="privacy_consent" required>
+												<label class="form-check-label" for="privacy-consent">I agree to the <a href="privacy.html" target="_blank">Privacy Policy</a>.</label>
+											</div>
+										</div>
+										<div class="col-12">
+											<button type="submit" id="contact-submit" class="button w-100 m-0">Send Message</button>
+										</div>
+									</div>
+								</form>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -314,6 +358,73 @@
 		};
 	</script>
 	<script defer src="js/functions.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function () {
+			var form = document.getElementById('contact-form');
+			var submitBtn = document.getElementById('contact-submit');
+			var resultEl = document.querySelector('.form-result');
+			var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx63aEMEljxi_W6xgtDIMIFj51BoUJKujXXKG03OtkDcODOrRfRJS1x_FJzt-GCGYwQ/exec';
+
+			if (form) {
+				form.addEventListener('submit', function (e) {
+					e.preventDefault();
+					if (!form.checkValidity()) return;
+
+					if (submitBtn) {
+						submitBtn.disabled = true;
+						var originalBtnText = submitBtn.innerText;
+						submitBtn.innerText = 'Sending...';
+					}
+					if (resultEl) {
+						resultEl.innerHTML = '';
+					}
+
+					var formData = new FormData(form);
+
+					fetch(SCRIPT_URL, {
+						method: 'POST',
+						body: formData
+					})
+					.then(function (response) {
+						return response.json();
+					})
+					.then(function (data) {
+						if (data && data.result === 'success') {
+							if (resultEl) {
+								resultEl.innerHTML = '<div class="alert alert-success mt-2 mb-3">Thank you for your message! We will get back to you shortly.<br> - by STAR Chang</div>';
+							}
+
+							// === GTM / GA4 事件追蹤 (發送標準 generate_lead 事件) ===
+							window.dataLayer = window.dataLayer || [];
+							window.dataLayer.push({
+								event: 'generate_lead',
+								form_id: 'contact-form',
+								form_subject: formData.get('subject') || ''
+							});
+
+							form.reset();
+						} else {
+							if (resultEl) {
+								resultEl.innerHTML = '<div class="alert alert-danger mt-2 mb-3">Something went wrong. Please try again or email us directly at valuecafecc@gmail.com.</div>';
+							}
+						}
+					})
+					.catch(function (error) {
+						console.error('Submission error:', error);
+						if (resultEl) {
+							resultEl.innerHTML = '<div class="alert alert-danger mt-2 mb-3">Failed to send message. Please try again or email us directly at valuecafecc@gmail.com.</div>';
+						}
+					})
+					.finally(function () {
+						if (submitBtn) {
+							submitBtn.disabled = false;
+							submitBtn.innerText = originalBtnText;
+						}
+					});
+				});
+			}
+		});
+	</script>
 
 </body>
 </html>

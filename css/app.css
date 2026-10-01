@@ -732,6 +732,23 @@ ul, ol {
 	padding-left: 0;
 }
 
+/* Form Styles */
+.form-control:focus,
+.form-select:focus {
+	border-color: var(--color-primary);
+	box-shadow: 0 0 0 0.2rem rgba(166, 123, 91, 0.25);
+}
+
+.form-check-input:checked {
+	background-color: var(--color-primary);
+	border-color: var(--color-primary);
+}
+
+.form-check-input:focus {
+	border-color: var(--color-primary);
+	box-shadow: 0 0 0 0.2rem rgba(166, 123, 91, 0.25);
+}
+
 
 
 /* === pages.css === */
