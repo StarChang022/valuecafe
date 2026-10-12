@@ -554,6 +554,7 @@ margin-top: var(--gap-list);
 .cards.photo-text-media h3 {
 	margin-top: 0;
 	font-size: var(--text-md);
+	font-weight: 400;
 	display: -webkit-box;
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
@@ -612,6 +613,7 @@ margin-top: var(--gap-list);
 
 .bookmarks h3 {
 	font-size: var(--number-16);
+	font-weight: 400;
 	margin-top: var(--gap-content);
 }
 
