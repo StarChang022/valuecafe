@@ -3,30 +3,22 @@
 
 <head>
 
-	<!-- Google Tag Manager (Optimized: Lazy Loaded on User Interaction) -->
+	<!-- Google Analytics 4 -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-5PTYPV0S9P"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-		(function () {
-			var gtmLoaded = false;
-			function loadGTM() {
-				if (gtmLoaded) return;
-				gtmLoaded = true;
-				window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-				var f = document.getElementsByTagName('script')[0],
-					j = document.createElement('script');
-				j.async = true;
-				j.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-M6FP6CGL';
-				f.parentNode.insertBefore(j, f);
-				['touchstart', 'scroll', 'mousemove', 'click', 'keydown'].forEach(function (e) {
-					window.removeEventListener(e, loadGTM, { passive: true });
-				});
-			}
-			['touchstart', 'scroll', 'mousemove', 'click', 'keydown'].forEach(function (e) {
-				window.addEventListener(e, loadGTM, { passive: true, once: true });
-			});
-			setTimeout(loadGTM, 3500);
-		})();
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-5PTYPV0S9P');
 	</script>
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-M6FP6CGL');</script>
 
 	<!-- Basic -->
 	<meta charset="UTF-8">
@@ -75,7 +67,7 @@
 	<meta property="og:title" content="P/E Ratio Explained: How to Value Stocks & Spot Traps | ValueCafe">
 	<meta property="og:description" content="Understand the Price-to-Earnings (P/E) ratio: master trailing vs forward P/E, read market sentiment, evaluate earnings quality, and avoid low P/E value traps.">
 	<meta property="og:url" content="https://valuecafe.cc/intrinsic-value/pe-ratio.html">
-	<meta property="og:image" content="../images/intrinsic-value/pe-ratio/cover.webp">
+	<meta property="og:image" content="https://valuecafe.cc/images/intrinsic-value/pe-ratio/cover.webp">>
 	<meta property="og:type" content="website">
 
 	<!-- JSON-LD -->
@@ -83,9 +75,15 @@
 	{
 		"@context": "https://schema.org",
 		"@type": "Article",
+		"headline": "P/E Ratio Explained: How to Value Stocks & Spot Traps | ValueCafe",
+		"description": "Understand the Price-to-Earnings (P/E) ratio: master trailing vs forward P/E, read market sentiment, evaluate earnings quality, and avoid low P/E value traps.",
+		"image": "https://valuecafe.cc/images/intrinsic-value/pe-ratio/cover.webp",
+		"datePublished": "2026-07-12T14:51:07+08:00",
+		"dateModified": "2026-10-12T10:04:52+08:00",
 		"author": {
-			"@type": "Organization",
-			"name": "ValueCafe"
+			"@type": "Person",
+			"name": "STARChang",
+			"url": "https://valuecafe.cc/contact.html"
 		},
 		"publisher": {
 			"@type": "Organization",
@@ -95,12 +93,11 @@
 				"url": "https://valuecafe.cc/images/logo.svg"
 			}
 		},
-		"inLanguage": "en-US",
-		"url": "https://valuecafe.cc/intrinsic-value/pe-ratio.html",
-		"areaServed": "North America, Europe",
-		"serviceType": ["Stock Education", "Financial Training", "Investment Strategy Coaching", "Value Investing Courses"],
-		"name": "P/E Ratio Explained: How to Value Stocks & Spot Traps | ValueCafe",
-		"description": "Understand the Price-to-Earnings (P/E) ratio: master trailing vs forward P/E, read market sentiment, evaluate earnings quality, and avoid low P/E value traps."
+		"mainEntityOfPage": {
+			"@type": "WebPage",
+			"@id": "https://valuecafe.cc/intrinsic-value/pe-ratio.html"
+		},
+		"inLanguage": "en-US"
 	}
 	</script>
 

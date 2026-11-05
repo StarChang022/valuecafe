@@ -36,30 +36,22 @@ GA_GTM_PATTERN = re.compile(
     re.DOTALL
 )
 
-OPTIMIZED_GTM_TEMPLATE = """\t<!-- Google Tag Manager (Optimized: Lazy Loaded on User Interaction) -->
-\t<script>
-\t\twindow.dataLayer = window.dataLayer || [];
-\t\t(function () {
-\t\t\tvar gtmLoaded = false;
-\t\t\tfunction loadGTM() {
-\t\t\t\tif (gtmLoaded) return;
-\t\t\t\tgtmLoaded = true;
-\t\t\t\twindow.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-\t\t\t\tvar f = document.getElementsByTagName('script')[0],
-\t\t\t\t\tj = document.createElement('script');
-\t\t\t\tj.async = true;
-\t\t\t\tj.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-M6FP6CGL';
-\t\t\t\tf.parentNode.insertBefore(j, f);
-\t\t\t\t['touchstart', 'scroll', 'mousemove', 'click', 'keydown'].forEach(function (e) {
-\t\t\t\t\twindow.removeEventListener(e, loadGTM, { passive: true });
-\t\t\t\t});
-\t\t\t}
-\t\t\t['touchstart', 'scroll', 'mousemove', 'click', 'keydown'].forEach(function (e) {
-\t\t\t\twindow.addEventListener(e, loadGTM, { passive: true, once: true });
-\t\t\t});
-\t\t\tsetTimeout(loadGTM, 3500);
-\t\t})();
-\t</script>"""
+OPTIMIZED_GTM_TEMPLATE = """	<!-- Google Analytics 4 -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-5PTYPV0S9P"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-5PTYPV0S9P');
+	</script>
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-M6FP6CGL');</script>"""
 
 JS_BUNDLE_PATTERN = re.compile(
     r'[ \t]*<!-- JavaScripts -->\s*'

@@ -3,30 +3,22 @@
 
 <head>
 
-	<!-- Google Tag Manager (Optimized: Lazy Loaded on User Interaction) -->
+	<!-- Google Analytics 4 -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-5PTYPV0S9P"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-		(function () {
-			var gtmLoaded = false;
-			function loadGTM() {
-				if (gtmLoaded) return;
-				gtmLoaded = true;
-				window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-				var f = document.getElementsByTagName('script')[0],
-					j = document.createElement('script');
-				j.async = true;
-				j.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-M6FP6CGL';
-				f.parentNode.insertBefore(j, f);
-				['touchstart', 'scroll', 'mousemove', 'click', 'keydown'].forEach(function (e) {
-					window.removeEventListener(e, loadGTM, { passive: true });
-				});
-			}
-			['touchstart', 'scroll', 'mousemove', 'click', 'keydown'].forEach(function (e) {
-				window.addEventListener(e, loadGTM, { passive: true, once: true });
-			});
-			setTimeout(loadGTM, 3500);
-		})();
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-5PTYPV0S9P');
 	</script>
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-M6FP6CGL');</script>
 
 	<!-- Basic -->
 	<meta charset="UTF-8">
@@ -75,7 +67,7 @@
 	<meta property="og:title" content="Key Financial Ratios for Beginners: ROE, Free Cash Flow & Debt | ValueCafe">
 	<meta property="og:description" content="Master essential financial ratios for stock investing. Understand ROE, ROA, Profit Margins, Free Cash Flow, Debt, and Current Ratios with simple common sense.">
 	<meta property="og:url" content="https://valuecafe.cc/financial-ratios.html">
-	<meta property="og:image" content="https://valuecafe.cc/images/index/hero.webp">
+	<meta property="og:image" content="https://valuecafe.cc/images/index/hero.webp">>
 	<meta property="og:type" content="website">
 
 	<!-- JSON-LD -->
@@ -83,10 +75,9 @@
 	{
 		"@context": "https://schema.org",
 		"@type": "CollectionPage",
-		"author": {
-			"@type": "Organization",
-			"name": "ValueCafe"
-		},
+		"name": "Key Financial Ratios for Beginners: ROE, Free Cash Flow & Debt | ValueCafe",
+		"description": "Master essential financial ratios for stock investing. Understand ROE, ROA, Profit Margins, Free Cash Flow, Debt, and Current Ratios with simple common sense.",
+		"url": "https://valuecafe.cc/financial-ratios.html",
 		"publisher": {
 			"@type": "Organization",
 			"name": "ValueCafe",
@@ -95,12 +86,7 @@
 				"url": "https://valuecafe.cc/images/logo.svg"
 			}
 		},
-		"inLanguage": "en-US",
-		"url": "https://valuecafe.cc/financial-ratios.html",
-		"areaServed": "North America, Europe",
-		"serviceType": ["Stock Education", "Financial Training", "Investment Strategy Coaching", "Value Investing Courses"],
-		"name": "Key Financial Ratios for Beginners: ROE, Free Cash Flow & Debt | ValueCafe",
-		"description": "Master essential financial ratios for stock investing. Understand ROE, ROA, Profit Margins, Free Cash Flow, Debt, and Current Ratios with simple common sense."
+		"inLanguage": "en-US"
 	}
 	</script>
 

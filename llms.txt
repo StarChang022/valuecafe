@@ -8,12 +8,12 @@
 - Contact Page: https://valuecafe.cc/contact
 
 ## Services & Learning
-- [Beginner's Guide](https://valuecafe.cc/to-beginners): Step-by-step guide to start value investing.
-- [Financial Reports](https://valuecafe.cc/statements): Learn to read income statements, balance sheets, and cash flow statements.
-- [Intrinsic Value](https://valuecafe.cc/intrinsic-value): Methods like DCF, P/E, and P/B ratios.
-- [Financial Ratios](https://valuecafe.cc/financial-ratios): Key metrics like ROE, Debt Ratio, and Profit Margin.
-- [Investment Philosophy](https://valuecafe.cc/philosophy): Core concepts like Economic Moat, Margin of Safety, and Patience.
-- [Legendary Investors](https://valuecafe.cc/legendary): Learn from Warren Buffett, Charlie Munger, and Peter Lynch.
+- [Beginner's Guide](https://valuecafe.cc/to-beginners/pick-great-companies.html): Step-by-step guide to start value investing.
+- [Financial Reports](https://valuecafe.cc/statements/balance-sheet.html): Learn to read income statements, balance sheets, and cash flow statements.
+- [Intrinsic Value](https://valuecafe.cc/intrinsic-value.html): Methods like DCF, P/E, and P/B ratios.
+- [Financial Ratios](https://valuecafe.cc/financial-ratios.html): Key metrics like ROE, Debt Ratio, and Profit Margin.
+- [Investment Philosophy](https://valuecafe.cc/philosophy.html): Core concepts like Economic Moat, Margin of Safety, and Patience.
+- [Legendary Investors](https://valuecafe.cc/legendary.html): Learn from Warren Buffett, Charlie Munger, and Peter Lynch.
 
 ## Key Links
-- [About Us](https://valuecafe.cc/worldview)
+- [About Us](https://valuecafe.cc/worldview.html)

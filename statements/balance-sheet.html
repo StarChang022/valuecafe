@@ -3,30 +3,22 @@
 
 <head>
 
-	<!-- Google Tag Manager (Optimized: Lazy Loaded on User Interaction) -->
+	<!-- Google Analytics 4 -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-5PTYPV0S9P"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
-		(function () {
-			var gtmLoaded = false;
-			function loadGTM() {
-				if (gtmLoaded) return;
-				gtmLoaded = true;
-				window.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-				var f = document.getElementsByTagName('script')[0],
-					j = document.createElement('script');
-				j.async = true;
-				j.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-M6FP6CGL';
-				f.parentNode.insertBefore(j, f);
-				['touchstart', 'scroll', 'mousemove', 'click', 'keydown'].forEach(function (e) {
-					window.removeEventListener(e, loadGTM, { passive: true });
-				});
-			}
-			['touchstart', 'scroll', 'mousemove', 'click', 'keydown'].forEach(function (e) {
-				window.addEventListener(e, loadGTM, { passive: true, once: true });
-			});
-			setTimeout(loadGTM, 3500);
-		})();
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+
+		gtag('config', 'G-5PTYPV0S9P');
 	</script>
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-M6FP6CGL');</script>
 
 	<!-- Basic -->
 	<meta charset="UTF-8">
@@ -70,7 +62,7 @@
 	<meta property="og:title" content="The first financial statement you should get to know is the balance sheet | Balance Sheet | ValueCafe">
 	<meta property="og:description" content="Learn how to read a balance sheet step-by-step. Discover how assets, liabilities, and equity reveal a company's true financial health with zero complex math.">
 	<meta property="og:url" content="https://valuecafe.cc/statements/balance-sheet.html">
-	<meta property="og:image" content="../images/statements/balance-sheet/cover.webp">
+	<meta property="og:image" content="https://valuecafe.cc/images/statements/balance-sheet/cover.webp">>
 	<meta property="og:type" content="website">
 
 	<!-- JSON-LD -->
@@ -78,9 +70,15 @@
 	{
 		"@context": "https://schema.org",
 		"@type": "Article",
+		"headline": "The first financial statement you should get to know is the balance sheet | Balance Sheet | ValueCafe",
+		"description": "Learn how to read a balance sheet step-by-step. Discover how assets, liabilities, and equity reveal a company's true financial health with zero complex math.",
+		"image": "https://valuecafe.cc/images/statements/balance-sheet/cover.webp",
+		"datePublished": "2026-07-12T14:51:07+08:00",
+		"dateModified": "2026-09-29T14:53:54+08:00",
 		"author": {
-			"@type": "Organization",
-			"name": "ValueCafe"
+			"@type": "Person",
+			"name": "STARChang",
+			"url": "https://valuecafe.cc/contact.html"
 		},
 		"publisher": {
 			"@type": "Organization",
@@ -90,12 +88,11 @@
 				"url": "https://valuecafe.cc/images/logo.svg"
 			}
 		},
-		"inLanguage": "en-US",
-		"url": "https://valuecafe.cc/statements/balance-sheet.html",
-		"areaServed": "North America, Europe",
-		"serviceType": ["Stock Education", "Financial Training", "Investment Strategy Coaching", "Value Investing Courses"],
-		"name": "The first financial statement you should get to know is the balance sheet | Balance Sheet | ValueCafe",
-		"description": "Learn how to read a balance sheet step-by-step. Discover how assets, liabilities, and equity reveal a company's true financial health with zero complex math."
+		"mainEntityOfPage": {
+			"@type": "WebPage",
+			"@id": "https://valuecafe.cc/statements/balance-sheet.html"
+		},
+		"inLanguage": "en-US"
 	}
 	</script>
 
