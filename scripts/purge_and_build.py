@@ -93,6 +93,10 @@ SAFELIST_PATTERNS = [
     r"\.preloader",
     r"\.overlay",
     r"\.not-found",
+    r"\.container\b",
+    r"\.row\b",
+    r"\.col\b",
+    r"\.col-",
     r"html\b",
     r"\bbody\b",
     r"\ba\b",
@@ -464,6 +468,10 @@ def main():
     if style_raw and ord(style_raw[0]) > 127:
         style_raw = style_raw[1:]
 
+    # Strip CSS comments first so that comments containing CSS rules (e.g. /* rtl:raw: ... */)
+    # do not break rule block boundaries or leave unclosed comments that swallow CSS
+    style_raw = re.sub(r"/\*[\s\S]*?\*/", "", style_raw)
+
     purged_css, kept, dropped = purge_css(style_raw, tokens)
     print(f"  Kept {kept:,} rules, dropped {dropped:,} rules")
 
@@ -471,6 +479,9 @@ def main():
     app_css_path = os.path.join(ROOT, "css", "app.css")
     with open(app_css_path, "r", encoding="utf-8") as f:
         app_css = f.read()
+
+    # Fix relative image paths: ../images/ -> images/ (style.min.css lives at root, not /css/)
+    app_css = app_css.replace("url('../images/", "url('images/").replace('url("../images/', 'url("images/')
     merged_css = purged_css + "\n\n/* === app.css (ValueCafe custom) === */\n" + app_css
 
     print("\n[Step 4] Minifying merged CSS...")
